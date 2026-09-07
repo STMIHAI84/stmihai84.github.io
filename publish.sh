@@ -71,6 +71,24 @@ HEAD
   printf '</body>\n</html>\n'
 } > "$SITE/index.html"
 
+# robots.txt + sitemap.xml, ca Google sa gaseasca si sa indexeze pagina
+cat > "$SITE/robots.txt" <<ROBOTS
+User-agent: *
+Allow: /
+
+Sitemap: https://stmihai84.github.io/sitemap.xml
+ROBOTS
+
+TODAY="$(date +%F)"
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  for u in "" "cv-ro.pdf" "cv-ru.pdf" "cv-en.pdf" "cv-fr.pdf"; do
+    printf '  <url><loc>https://stmihai84.github.io/%s</loc><lastmod>%s</lastmod></url>\n' "$u" "$TODAY"
+  done
+  echo '</urlset>'
+} > "$SITE/sitemap.xml"
+
 cd "$SITE"
 git add -A
 if git diff --cached --quiet; then

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stmihai84.github.io/sitemap.xml
