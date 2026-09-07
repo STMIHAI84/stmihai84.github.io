@@ -35,18 +35,18 @@
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#0E131A; --surface:#151C25; --surface-2:#111821;
-      --ink:#E9EDF3; --ink-2:#9BA7B6; --ink-3:#78838F;
-      --rule:#252E3A; --rule-soft:#1D2530;
-      --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319; --on-brass:#14181F;
+      --bg:#181D25; --surface:#212832; --surface-2:#1C222B;
+      --ink:#ECF0F5; --ink-2:#A8B3C0; --ink-3:#828D9A;
+      --rule:#333C48; --rule-soft:#28303B;
+      --brass:#D9A544; --brass-ink:#E8BC66; --brass-fill:#332B18; --brass-edge:#4A3E20; --on-brass:#181D25;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0E131A; --surface:#151C25; --surface-2:#111821;
-    --ink:#E9EDF3; --ink-2:#9BA7B6; --ink-3:#78838F;
-    --rule:#252E3A; --rule-soft:#1D2530;
-    --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319; --on-brass:#14181F;
+    --bg:#181D25; --surface:#212832; --surface-2:#1C222B;
+    --ink:#ECF0F5; --ink-2:#A8B3C0; --ink-3:#828D9A;
+    --rule:#333C48; --rule-soft:#28303B;
+    --brass:#D9A544; --brass-ink:#E8BC66; --brass-fill:#332B18; --brass-edge:#4A3E20; --on-brass:#181D25;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
   }
 
@@ -67,7 +67,27 @@
   .wrap{max-width:1080px; margin:0 auto; padding:22px 24px 80px;}
 
   /* ---------- language keys ---------- */
-  .langsw{display:flex; justify-content:flex-end; gap:0; margin-bottom:14px;}
+  .langsw{display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-bottom:14px;}
+  .themebtn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:33px; height:33px; padding:0; cursor:pointer;
+    border:1px solid var(--rule); border-radius:2px;
+    background:var(--surface); color:var(--ink-3);
+    transition:color .12s, background .12s;
+  }
+  .themebtn:hover{color:var(--brass-ink); background:var(--surface-2);}
+  .themebtn:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
+  .themebtn svg{width:16px; height:16px;}
+  .ico-sun{display:none;}
+  .ico-moon{display:block;}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .ico-moon{display:none;}
+    :root:not([data-theme="light"]) .ico-sun{display:block;}
+  }
+  :root[data-theme="dark"] .ico-moon{display:none;}
+  :root[data-theme="dark"] .ico-sun{display:block;}
+  :root[data-theme="light"] .ico-moon{display:block;}
+  :root[data-theme="light"] .ico-sun{display:none;}
   .langsw .keys{display:flex; border:1px solid var(--rule); border-radius:2px; overflow:hidden; background:var(--surface);}
   .langsw button{
     font-family:var(--mono); font-size:11.5px; letter-spacing:1.4px; font-weight:500;
@@ -267,6 +287,7 @@
 <div class="wrap">
 
   <nav class="langsw" aria-label="Language">
+    <button type="button" class="themebtn" aria-label="Light / dark"><svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path></svg><svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"></path></svg></button>
     <div class="keys">
       <button type="button" data-l="ro" aria-pressed="true">RO</button>
       <button type="button" data-l="ru" aria-pressed="false">RU</button>
@@ -713,6 +734,23 @@
     btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
     if (store) { try { localStorage.setItem('cv-lang', l); } catch (e) {} }
   }
+
+  // tema: clara / intunecata, retinuta local
+  var tbtn = document.querySelector('.themebtn');
+  function isDark(){
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  try {
+    var th = localStorage.getItem('cv-theme');
+    if (th === 'light' || th === 'dark') root.setAttribute('data-theme', th);
+  } catch (e) {}
+  if (tbtn) tbtn.addEventListener('click', function(){
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('cv-theme', next); } catch (e) {}
+  });
 
   var saved = null;
   try { saved = localStorage.getItem('cv-lang'); } catch (e) {}
