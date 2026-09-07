@@ -1,18 +1,44 @@
 #!/usr/bin/env bash
-# Reface pagina si PDF-urile din ~/Documente/CV, apoi publica pe GitHub Pages.
-set -e
-cd ~/Documente/CV
-for L in "" _RO _RU; do
+# Regenereaza PDF-urile si publica pagina pe https://stmihai84.github.io
+#
+#   ~/Documente/CV/   -> PDF-uri COMPLETE (cu telefon), pentru trimis pe email
+#   ~/cv-site/        -> PDF-uri PUBLICE  (fara telefon), pentru site
+set -euo pipefail
+
+SRC="$HOME/Documente/CV"
+SITE="$HOME/cv-site"
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
+
+pdf () {  # pdf <fisier.html> <iesire.pdf>
   google-chrome --headless=new --disable-gpu --no-pdf-header-footer \
-    --print-to-pdf="$HOME/Documente/CV/Mihail_Stingaci_CV_2026${L}.pdf" \
-    "file://$HOME/Documente/CV/Mihail_Stingaci_CV_2026${L}.html" >/dev/null 2>&1
+    --print-to-pdf="$2" "file://$1" >/dev/null 2>&1
+}
+
+for pair in ":en" "_RO:ro" "_RU:ru"; do
+  suf="${pair%%:*}"; lang="${pair##*:}"
+  html="$SRC/Mihail_Stingaci_CV_2026${suf}.html"
+
+  # 1. varianta completa, cu telefon
+  pdf "$html" "$SRC/Mihail_Stingaci_CV_2026${suf}.pdf"
+
+  # 2. varianta publica: scoate randul cu numarul de telefon
+  perl -0pe 's{<span><b>[^<]*</b>\s*&nbsp;\+373[^<]*</span>\s*}{}g' "$html" > "$TMP/$lang.html"
+  if grep -q '+373' "$TMP/$lang.html"; then
+    echo "EROARE: numarul de telefon a ramas in varianta publica ($lang). Opresc." >&2
+    exit 1
+  fi
+  pdf "$TMP/$lang.html" "$SITE/cv-$lang.pdf"
 done
-cd ~/cv-site
-cp ~/Documente/CV/cv-web.html index.html
-cp ~/Documente/CV/Mihail_Stingaci_CV_2026.pdf    cv-en.pdf
-cp ~/Documente/CV/Mihail_Stingaci_CV_2026_RO.pdf cv-ro.pdf
-cp ~/Documente/CV/Mihail_Stingaci_CV_2026_RU.pdf cv-ru.pdf
+
+cp "$SRC/cv-web.html" "$SITE/index.html"
+
+cd "$SITE"
 git add -A
-git commit -m "Actualizare CV $(date +%F)" || { echo "Nimic de publicat."; exit 0; }
-git push
-echo "Gata: https://stmihai84.github.io"
+if git diff --cached --quiet; then
+  echo "Nimic de publicat."
+  exit 0
+fi
+git commit -q -m "Actualizare CV $(date +%F)"
+git push -q
+echo "Publicat: https://stmihai84.github.io"
