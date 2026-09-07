@@ -68,12 +68,12 @@ HEAD
 } > "$SITE/index.html"
 
 cd "$SITE"
-git pull --rebase --quiet || true   # ia ce a scris GitHub (ex. fisierul CNAME)
 git add -A
 if git diff --cached --quiet; then
   echo "Nimic de publicat."
   exit 0
 fi
 git commit -q -m "Actualizare CV $(date +%F)"
+git pull --rebase --quiet || true   # ia ce a scris GitHub (ex. fisierul CNAME)
 git push -q
 echo "Publicat: https://stmihai84.github.io"
