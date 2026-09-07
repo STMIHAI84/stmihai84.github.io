@@ -34,6 +34,8 @@ for pair in ":en" "_RO:ro" "_RU:ru" "_FR:fr"; do
 done
 
 # index.html = document complet (head cu Open Graph) + continutul paginii
+# Profilul LinkedIn — SINGURUL loc de schimbat daca modifici URL-ul de profil.
+LINKEDIN="https://www.linkedin.com/in/mihai-stingaci-38a6b51b4"
 TITLE="Mihail Stîngaci — Backend / Full-Stack Developer"
 DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunicare in timp real. CV in romana, rusa, engleza si franceza."
 {
@@ -46,6 +48,8 @@ DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunic
 <title>$TITLE</title>
 <meta name="description" content="$DESC">
 <meta name="author" content="Mihail Stîngaci">
+<meta name="robots" content="index, follow">
+<link rel="me" href="$LINKEDIN">
 <link rel="canonical" href="https://stmihai84.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Mihail Stîngaci">
