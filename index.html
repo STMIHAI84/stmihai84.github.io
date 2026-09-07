@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mihail Stîngaci — Backend / Full-Stack Developer</title>
 <meta name="description" content="Symfony, Node.js si microservicii event-driven pentru platforme de comunicare in timp real. CV in romana, rusa, engleza si franceza.">
+<meta name="author" content="Mihail Stîngaci">
 <link rel="canonical" href="https://stmihai84.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Mihail Stîngaci">
@@ -21,269 +22,910 @@
 <meta name="twitter:image" content="https://stmihai84.github.io/og.png">
 </head>
 <body>
-<meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-  :root{
-    --bg:#F2F4F7; --surface:#FFFFFF; --surface-2:#FAFBFC;
-    --ink:#131922; --ink-2:#4A5563; --ink-3:#79838F;
-    --rule:#D8DEE6; --rule-soft:#E7EBF0;
-    --brass:#8F6310; --brass-ink:#8F6310; --brass-fill:#F4EAD3; --brass-edge:#E2D2AE; --on-brass:#FFFFFF;
-    --shadow:0 1px 2px rgba(19,25,34,.05), 0 8px 24px -14px rgba(19,25,34,.22);
-    --sans:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-    --display:"Archivo", "IBM Plex Sans", system-ui, sans-serif;
-    --mono:"IBM Plex Mono", ui-monospace, "DejaVu Sans Mono", monospace;
+  :root {
+    --bg: #F2F4F7;
+    --surface: #FFFFFF;
+    --surface-2: #FAFBFC;
+    --ink: #131922;
+    --ink-2: #4A5563;
+    --ink-3: #79838F;
+    --rule: #D8DEE6;
+    --rule-soft: #E7EBF0;
+    --brass: #8F6310;
+    --brass-ink: #8F6310;
+    --brass-fill: #F4EAD3;
+    --brass-edge: #E2D2AE;
+    --on-brass: #FFFFFF;
+    --shadow: 0 1px 2px rgba(19, 25, 34, .05), 0 8px 24px -14px rgba(19, 25, 34, .22);
+    --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --display: "Archivo", "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "DejaVu Sans Mono", monospace;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#181D25; --surface:#212832; --surface-2:#1C222B;
-      --ink:#ECF0F5; --ink-2:#A8B3C0; --ink-3:#828D9A;
-      --rule:#333C48; --rule-soft:#28303B;
-      --brass:#D9A544; --brass-ink:#E8BC66; --brass-fill:#332B18; --brass-edge:#4A3E20; --on-brass:#181D25;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #181D25;
+      --surface: #212832;
+      --surface-2: #1C222B;
+      --ink: #ECF0F5;
+      --ink-2: #A8B3C0;
+      --ink-3: #828D9A;
+      --rule: #333C48;
+      --rule-soft: #28303B;
+      --brass: #D9A544;
+      --brass-ink: #E8BC66;
+      --brass-fill: #332B18;
+      --brass-edge: #4A3E20;
+      --on-brass: #181D25;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px -16px rgba(0, 0, 0, .7);
     }
   }
-  :root[data-theme="dark"]{
-    --bg:#181D25; --surface:#212832; --surface-2:#1C222B;
-    --ink:#ECF0F5; --ink-2:#A8B3C0; --ink-3:#828D9A;
-    --rule:#333C48; --rule-soft:#28303B;
-    --brass:#D9A544; --brass-ink:#E8BC66; --brass-fill:#332B18; --brass-edge:#4A3E20; --on-brass:#181D25;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
+
+  :root[data-theme="dark"] {
+    --bg: #181D25;
+    --surface: #212832;
+    --surface-2: #1C222B;
+    --ink: #ECF0F5;
+    --ink-2: #A8B3C0;
+    --ink-3: #828D9A;
+    --rule: #333C48;
+    --rule-soft: #28303B;
+    --brass: #D9A544;
+    --brass-ink: #E8BC66;
+    --brass-fill: #332B18;
+    --brass-edge: #4A3E20;
+    --on-brass: #181D25;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px -16px rgba(0, 0, 0, .7);
   }
 
   /* ---------- language switching (RO renders with JS off) ---------- */
-  [data-t]{display:none;}
+  [data-t] {
+    display: none;
+  }
+
   :root:not([data-l]) [data-t="ro"],
   :root[data-l="ro"] [data-t="ro"],
   :root[data-l="ru"] [data-t="ru"],
   :root[data-l="en"] [data-t="en"],
-  :root[data-l="fr"] [data-t="fr"]{display:revert;}
-
-  *{box-sizing:border-box;}
-  body{
-    background:var(--bg); color:var(--ink);
-    font-family:var(--sans); font-size:16px; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  :root[data-l="fr"] [data-t="fr"] {
+    display: revert;
   }
-  .wrap{max-width:1080px; margin:0 auto; padding:22px 24px 80px;}
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 24px 80px;
+  }
 
   /* ---------- language keys ---------- */
-  .langsw{display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-bottom:14px;}
-  .themebtn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:9px 15px; cursor:pointer; align-self:stretch;
-    border:0; background:var(--brass-fill); color:var(--brass-ink);
-    font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:1.2px;
-    text-transform:uppercase; white-space:nowrap;
-    transition:filter .12s, background .12s;
+  .langsw {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
   }
-  .themebtn:hover{filter:brightness(1.08);}
-  .themebtn:focus-visible{outline:2px solid var(--brass); outline-offset:-2px;}
-  .themebtn svg{width:19px; height:19px; flex:none;}
-  .ico-sun{display:none;}
-  .ico-moon{display:inline-flex; align-items:center;}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .ico-moon{display:none;}
-    :root:not([data-theme="light"]) .ico-sun{display:inline-flex; align-items:center;}
+
+  .themebtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    cursor: pointer;
+    align-self: stretch;
+    border: 0;
+    background: var(--brass-fill);
+    color: var(--brass-ink);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: filter .12s, background .12s;
   }
-  :root[data-theme="dark"] .ico-moon{display:none;}
-  :root[data-theme="dark"] .ico-sun{display:inline-flex; align-items:center;}
-  :root[data-theme="light"] .ico-moon{display:inline-flex; align-items:center;}
-  :root[data-theme="light"] .ico-sun{display:none;}
-  .langsw .keys{display:flex; align-items:stretch; border:1px solid var(--rule);
-                border-radius:3px; overflow:hidden; background:var(--surface);}
-  .langsw button{
-    font-family:var(--mono); font-size:11.5px; letter-spacing:1.4px; font-weight:500;
-    padding:9px 15px; border:0; border-left:1px solid var(--rule); background:transparent;
-    color:var(--ink-3); cursor:pointer; transition:color .12s, background .12s;
+
+  .themebtn:hover {
+    filter: brightness(1.08);
   }
-  .langsw .keys button:first-of-type{border-left:0;}
-  .langsw button:hover{color:var(--ink); background:var(--surface-2);}
-  .langsw button[aria-pressed="true"]{background:var(--brass-fill); color:var(--brass-ink);}
-  .langsw button:focus-visible{outline:2px solid var(--brass); outline-offset:-2px;}
+
+  .themebtn:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: -2px;
+  }
+
+  .themebtn svg {
+    width: 19px;
+    height: 19px;
+    flex: none;
+  }
+
+  .ico-sun {
+    display: none;
+  }
+
+  .ico-moon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .ico-moon {
+      display: none;
+    }
+
+    :root:not([data-theme="light"]) .ico-sun {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  :root[data-theme="dark"] .ico-moon {
+    display: none;
+  }
+
+  :root[data-theme="dark"] .ico-sun {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  :root[data-theme="light"] .ico-moon {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  :root[data-theme="light"] .ico-sun {
+    display: none;
+  }
+
+  .langsw .keys {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .langsw button {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 1.4px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border: 0;
+    border-left: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-3);
+    cursor: pointer;
+    transition: color .12s, background .12s;
+  }
+
+  .langsw .keys button:first-of-type {
+    border-left: 0;
+  }
+
+  .langsw button:hover {
+    color: var(--ink);
+    background: var(--surface-2);
+  }
+
+  .langsw button[aria-pressed="true"] {
+    background: var(--brass-fill);
+    color: var(--brass-ink);
+  }
+
+  .langsw button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: -2px;
+  }
 
   /* ---------- masthead ---------- */
-  .plate{
-    background:var(--surface); border:1px solid var(--rule); border-radius:2px;
-    box-shadow:var(--shadow); overflow:hidden;
-  }
-  .plate-top{display:grid; grid-template-columns:1.5fr 1fr; border-bottom:1px solid var(--rule);}
-  .ident{padding:34px 34px 28px;}
-  h1{
-    font-family:var(--display); font-weight:800; font-size:clamp(38px,6vw,60px);
-    line-height:1.02; letter-spacing:-1.4px; margin:0 0 10px; text-wrap:balance;
-  }
-  .tagline{
-    font-family:var(--display); font-weight:600; font-size:clamp(15px,2vw,18px);
-    color:var(--brass-ink); letter-spacing:-.1px; margin:0 0 18px;
-  }
-  .pitch{max-width:58ch; color:var(--ink-2); margin:0; font-size:15.5px;}
-
-  .patch{
-    border-left:1px solid var(--rule); background:var(--surface-2);
-    padding:26px 28px; display:flex; flex-direction:column; gap:14px; justify-content:center;
-  }
-  .field{display:flex; flex-direction:column; gap:3px;}
-  .field .k{font-family:var(--mono); font-size:10.5px; letter-spacing:1.3px; text-transform:uppercase; color:var(--ink-3);}
-  .field .v{font-size:15px; font-weight:500; word-break:break-word;}
-  .field a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brass-edge);}
-  .field a:hover{color:var(--brass-ink); border-bottom-color:var(--brass);}
-  .field a:focus-visible{outline:2px solid var(--brass); outline-offset:3px; border-radius:2px;}
-
-  .cta{margin-top:22px; display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px;}
-  .btn{
-    display:inline-flex; align-items:center; gap:9px;
-    background:var(--brass); color:var(--on-brass); border:1px solid var(--brass);
-    padding:11px 20px 11px 17px; border-radius:3px;
-    font-family:var(--sans); font-weight:600; font-size:15.5px; letter-spacing:-.1px;
-    text-decoration:none; box-shadow:var(--shadow);
-    transition:transform .1s ease, filter .12s ease;
-  }
-  .btn svg{width:17px; height:17px; flex:none;}
-  .btn:hover{filter:brightness(1.12); transform:translateY(-1px);}
-  .btn:active{transform:translateY(0);}
-  .btn:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
-  .alt{display:flex; align-items:center; flex-wrap:wrap; gap:6px;
-       font-family:var(--mono); font-size:11.5px; color:var(--ink-3);}
-  .alt a{
-    color:var(--ink-2); text-decoration:none; letter-spacing:.6px;
-    border:1px solid var(--rule); border-radius:2px; padding:3px 8px; background:var(--surface);
-  }
-  .alt a:hover{color:var(--brass-ink); border-color:var(--brass-edge); background:var(--brass-fill);}
-  .alt a:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
-
-  .dl{display:flex; flex-wrap:wrap; gap:5px;}
-  .dl a{
-    font-family:var(--mono); font-size:11.5px; letter-spacing:.6px; font-weight:500;
-    text-decoration:none; padding:4px 10px; border-radius:2px;
-    border:1px solid var(--brass-edge); background:var(--brass-fill); color:var(--brass-ink);
-    transition:background .12s, border-color .12s;
-  }
-  .dl a:hover{background:var(--surface); border-color:var(--brass);}
-  .dl a:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
-  .langs{display:flex; flex-wrap:wrap; gap:5px;}
-  .langs b{
-    font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.6px;
-    padding:2px 7px; border:1px solid var(--brass-edge); background:var(--brass-fill);
-    color:var(--brass-ink); border-radius:2px;
+  .plate {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
   }
 
-  .strip{display:grid; grid-template-columns:repeat(4,1fr);}
-  .strip div.cell{padding:16px 20px; border-right:1px solid var(--rule-soft);}
-  .strip div.cell:last-child{border-right:0;}
-  .strip .n{font-family:var(--display); font-weight:700; font-size:24px; letter-spacing:-.6px;
-            font-variant-numeric:tabular-nums; line-height:1.1;}
-  .strip .l{font-family:var(--mono); font-size:10.5px; letter-spacing:1.1px;
-            text-transform:uppercase; color:var(--ink-3); margin-top:2px;}
+  .plate-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .ident {
+    padding: 34px 34px 28px;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(38px, 6vw, 60px);
+    line-height: 1.02;
+    letter-spacing: -1.4px;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+
+  .tagline {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(15px, 2vw, 18px);
+    color: var(--brass-ink);
+    letter-spacing: -.1px;
+    margin: 0 0 18px;
+  }
+
+  .pitch {
+    max-width: 58ch;
+    color: var(--ink-2);
+    margin: 0;
+    font-size: 15.5px;
+  }
+
+  .patch {
+    border-left: 1px solid var(--rule);
+    background: var(--surface-2);
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .field .k {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .field .v {
+    font-size: 15px;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .field a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass-edge);
+  }
+
+  .field a:hover {
+    color: var(--brass-ink);
+    border-bottom-color: var(--brass);
+  }
+
+  .field a:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .cta {
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--brass);
+    color: var(--on-brass);
+    border: 1px solid var(--brass);
+    padding: 11px 20px 11px 17px;
+    border-radius: 3px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15.5px;
+    letter-spacing: -.1px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform .1s ease, filter .12s ease;
+  }
+
+  .btn svg {
+    width: 17px;
+    height: 17px;
+    flex: none;
+  }
+
+  .btn:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  .alt {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+  }
+
+  .alt a {
+    color: var(--ink-2);
+    text-decoration: none;
+    letter-spacing: .6px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 3px 8px;
+    background: var(--surface);
+  }
+
+  .alt a:hover {
+    color: var(--brass-ink);
+    border-color: var(--brass-edge);
+    background: var(--brass-fill);
+  }
+
+  .alt a:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  .dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .dl a {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .6px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid var(--brass-edge);
+    background: var(--brass-fill);
+    color: var(--brass-ink);
+    transition: background .12s, border-color .12s;
+  }
+
+  .dl a:hover {
+    background: var(--surface);
+    border-color: var(--brass);
+  }
+
+  .dl a:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  .langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .langs b {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: .6px;
+    padding: 2px 7px;
+    border: 1px solid var(--brass-edge);
+    background: var(--brass-fill);
+    color: var(--brass-ink);
+    border-radius: 2px;
+  }
+
+  .strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .strip div.cell {
+    padding: 16px 20px;
+    border-right: 1px solid var(--rule-soft);
+  }
+
+  .strip div.cell:last-child {
+    border-right: 0;
+  }
+
+  .strip .n {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -.6px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  .strip .l {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
 
   /* ---------- sections ---------- */
-  section{margin-top:52px;}
-  .shead{display:flex; align-items:baseline; gap:14px; margin-bottom:20px;}
-  .shead h2{
-    font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:2px;
-    text-transform:uppercase; color:var(--brass-ink); margin:0; white-space:nowrap;
+  section {
+    margin-top: 52px;
   }
-  .shead .line{flex:1; height:1px; background:var(--rule);}
-  .shead .meta{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); text-align:right;}
+
+  .shead {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .shead h2 {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--brass-ink);
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .shead .line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .shead .meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    text-align: right;
+  }
 
   /* ---------- signal diagram ---------- */
-  .diagram{
-    background:var(--surface); border:1px solid var(--rule); border-radius:2px;
-    padding:22px 20px 16px; box-shadow:var(--shadow); overflow-x:auto;
+  .diagram {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 22px 20px 16px;
+    box-shadow: var(--shadow);
+    overflow-x: auto;
   }
-  .diagram .cap{
-    font-family:var(--mono); font-size:11px; letter-spacing:1.1px; text-transform:uppercase;
-    color:var(--ink-3); margin-bottom:14px;
+
+  .diagram .cap {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
   }
-  .diagram svg{display:block; min-width:660px; width:100%; height:auto;}
-  .flow{stroke-dasharray:5 9; animation:flow 1.6s linear infinite;}
-  @keyframes flow{to{stroke-dashoffset:-28;}}
-  @media (prefers-reduced-motion: reduce){ .flow{animation:none;} }
-  .diagram .f-brass{fill:var(--brass);}
-  .diagram .s-brass{stroke:var(--brass);}
-  .diagram .s-rule{stroke:var(--rule);}
-  .diagram .n-box{fill:var(--surface-2); stroke:var(--brass-edge);}
-  .diagram .n-box.brass{fill:var(--brass-fill);}
-  .diagram .n-box.plain{stroke:var(--rule);}
-  .diagram .n-sub{fill:var(--surface); stroke:var(--rule);}
-  .diagram .t-ink{fill:var(--ink);}
-  .diagram .t-ink2{fill:var(--ink-2);}
-  .diagram .t-mut{fill:var(--ink-3);}
-  .diagram .t-brass{fill:var(--brass-ink);}
+
+  .diagram svg {
+    display: block;
+    min-width: 660px;
+    width: 100%;
+    height: auto;
+  }
+
+  .flow {
+    stroke-dasharray: 5 9;
+    animation: flow 1.6s linear infinite;
+  }
+
+  @keyframes flow {
+    to {
+      stroke-dashoffset: -28;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow {
+      animation: none;
+    }
+  }
+
+  .diagram .f-brass {
+    fill: var(--brass);
+  }
+
+  .diagram .s-brass {
+    stroke: var(--brass);
+  }
+
+  .diagram .s-rule {
+    stroke: var(--rule);
+  }
+
+  .diagram .n-box {
+    fill: var(--surface-2);
+    stroke: var(--brass-edge);
+  }
+
+  .diagram .n-box.brass {
+    fill: var(--brass-fill);
+  }
+
+  .diagram .n-box.plain {
+    stroke: var(--rule);
+  }
+
+  .diagram .n-sub {
+    fill: var(--surface);
+    stroke: var(--rule);
+  }
+
+  .diagram .t-ink {
+    fill: var(--ink);
+  }
+
+  .diagram .t-ink2 {
+    fill: var(--ink-2);
+  }
+
+  .diagram .t-mut {
+    fill: var(--ink-3);
+  }
+
+  .diagram .t-brass {
+    fill: var(--brass-ink);
+  }
 
   /* ---------- timeline ---------- */
-  .track{display:flex; flex-direction:column;}
-  .entry{display:grid; grid-template-columns:112px 1fr; gap:0 26px; padding:22px 0; border-top:1px solid var(--rule);}
-  .entry:first-child{border-top:0; padding-top:4px;}
-  .when{
-    font-family:var(--mono); font-size:12.5px; color:var(--ink-3);
-    font-variant-numeric:tabular-nums; padding-top:5px; position:relative;
-  }
-  .when::before{content:""; position:absolute; right:-14px; top:11px; width:6px; height:6px; border-radius:50%; background:var(--brass);}
-  .entry.now .when::before{box-shadow:0 0 0 4px var(--brass-fill);}
-  .role{font-family:var(--display); font-weight:700; font-size:19px; letter-spacing:-.3px; margin:0;}
-  .org{color:var(--brass-ink); font-weight:600;}
-  .what{color:var(--ink-2); font-size:14.5px; margin:2px 0 0;}
-  .entry ul{margin:12px 0 0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:7px;}
-  .entry li{position:relative; padding-left:17px; font-size:15px;}
-  .entry li::before{content:""; position:absolute; left:0; top:9px; width:7px; height:1px; background:var(--brass);}
-  .entry li b{font-weight:600;}
-  .proj{margin-top:15px;}
-  .proj + .proj{border-top:1px dashed var(--rule); padding-top:14px;}
-  .proj-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;}
-  .proj-name{font-weight:600; font-size:15.5px; color:var(--ink);}
-  .proj-when{font-family:var(--mono); font-size:11.5px; color:var(--ink-3); white-space:nowrap;}
-  .chips{display:flex; flex-wrap:wrap; gap:5px; margin-top:13px;}
-  .chips span{
-    font-family:var(--mono); font-size:11.5px; letter-spacing:.3px; color:var(--ink-2);
-    border:1px solid var(--rule); background:var(--surface); padding:2px 8px; border-radius:2px;
+  .track {
+    display: flex;
+    flex-direction: column;
   }
 
-  .interlude{
-    margin-top:6px; background:var(--surface-2); border-left:2px solid var(--brass);
-    padding:16px 20px; color:var(--ink-2); font-size:14.5px;
+  .entry {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 0 26px;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
   }
-  .interlude .role{font-size:16px; color:var(--ink); margin-bottom:6px;}
-  .interlude p:last-child{margin:0;}
+
+  .entry:first-child {
+    border-top: 0;
+    padding-top: 4px;
+  }
+
+  .when {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+    padding-top: 5px;
+    position: relative;
+  }
+
+  .when::before {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: 11px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brass);
+  }
+
+  .entry.now .when::before {
+    box-shadow: 0 0 0 4px var(--brass-fill);
+  }
+
+  .role {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -.3px;
+    margin: 0;
+  }
+
+  .org {
+    color: var(--brass-ink);
+    font-weight: 600;
+  }
+
+  .what {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    margin: 2px 0 0;
+  }
+
+  .entry ul {
+    margin: 12px 0 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .entry li {
+    position: relative;
+    padding-left: 17px;
+    font-size: 15px;
+  }
+
+  .entry li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 7px;
+    height: 1px;
+    background: var(--brass);
+  }
+
+  .entry li b {
+    font-weight: 600;
+  }
+
+  .proj {
+    margin-top: 15px;
+  }
+
+  .proj+.proj {
+    border-top: 1px dashed var(--rule);
+    padding-top: 14px;
+  }
+
+  .proj-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .proj-name {
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--ink);
+  }
+
+  .proj-when {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    white-space: nowrap;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 13px;
+  }
+
+  .chips span {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .3px;
+    color: var(--ink-2);
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .interlude {
+    margin-top: 6px;
+    background: var(--surface-2);
+    border-left: 2px solid var(--brass);
+    padding: 16px 20px;
+    color: var(--ink-2);
+    font-size: 14.5px;
+  }
+
+  .interlude .role {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .interlude p:last-child {
+    margin: 0;
+  }
 
   /* ---------- stack ---------- */
-  .stack{background:var(--surface); border:1px solid var(--rule); border-radius:2px; box-shadow:var(--shadow);}
-  .srow{display:grid; grid-template-columns:170px 1fr; gap:0 20px; padding:14px 22px;
-        border-top:1px solid var(--rule-soft); align-items:start;}
-  .srow:first-child{border-top:0;}
-  .srow dt{font-family:var(--mono); font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--ink-3); padding-top:4px;}
-  .srow dd{margin:0; display:flex; flex-wrap:wrap; gap:5px;}
-  .srow dd i{font-style:normal; font-size:13.5px; color:var(--ink); border:1px solid var(--rule);
-             background:var(--surface-2); padding:2.5px 9px; border-radius:2px;}
-  .srow dd i.key{border-color:var(--brass-edge); background:var(--brass-fill); color:var(--brass-ink); font-weight:500;}
-
-  /* ---------- background ---------- */
-  .cols{display:grid; grid-template-columns:1.1fr 1fr; gap:34px;}
-  .item{padding:14px 0; border-top:1px solid var(--rule);}
-  .item:first-child{border-top:0; padding-top:0;}
-  .item .t{font-weight:600; font-size:16px;}
-  .item .d{font-family:var(--mono); font-size:12px; color:var(--ink-3); float:right;}
-  .item .n{color:var(--ink-2); font-size:14.5px; margin-top:2px;}
-  .lang-row{display:grid; grid-template-columns:112px 1fr; gap:6px 16px; font-size:15px;}
-  .lang-row dt{font-weight:600;}
-  .lang-row dd{margin:0; color:var(--ink-2);}
-
-  footer{
-    margin-top:56px; padding-top:18px; border-top:1px solid var(--rule);
-    font-family:var(--mono); font-size:11.5px; letter-spacing:.6px; color:var(--ink-3);
-    display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:space-between;
+  .stack {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    box-shadow: var(--shadow);
   }
 
-  @media (max-width:820px){
-    .plate-top{grid-template-columns:1fr;}
-    .patch{border-left:0; border-top:1px solid var(--rule);}
-    .strip{grid-template-columns:repeat(2,1fr);}
-    .strip div.cell:nth-child(2){border-right:0;}
-    .strip div.cell:nth-child(-n+2){border-bottom:1px solid var(--rule-soft);}
-    .entry{grid-template-columns:1fr; gap:8px;}
-    .when::before{display:none;}
-    .srow{grid-template-columns:1fr; gap:8px;}
-    .cols{grid-template-columns:1fr;}
+  .srow {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 0 20px;
+    padding: 14px 22px;
+    border-top: 1px solid var(--rule-soft);
+    align-items: start;
+  }
+
+  .srow:first-child {
+    border-top: 0;
+  }
+
+  .srow dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-top: 4px;
+  }
+
+  .srow dd {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .srow dd i {
+    font-style: normal;
+    font-size: 13.5px;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    background: var(--surface-2);
+    padding: 2.5px 9px;
+    border-radius: 2px;
+  }
+
+  .srow dd i.key {
+    border-color: var(--brass-edge);
+    background: var(--brass-fill);
+    color: var(--brass-ink);
+    font-weight: 500;
+  }
+
+  /* ---------- background ---------- */
+  .cols {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 34px;
+  }
+
+  .item {
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .item:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .item .t {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .item .d {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-3);
+    float: right;
+  }
+
+  .item .n {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    margin-top: 2px;
+  }
+
+  .lang-row {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 6px 16px;
+    font-size: 15px;
+  }
+
+  .lang-row dt {
+    font-weight: 600;
+  }
+
+  .lang-row dd {
+    margin: 0;
+    color: var(--ink-2);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .6px;
+    color: var(--ink-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    justify-content: space-between;
+  }
+
+  @media (max-width:820px) {
+    .plate-top {
+      grid-template-columns: 1fr;
+    }
+
+    .patch {
+      border-left: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strip div.cell:nth-child(2) {
+      border-right: 0;
+    }
+
+    .strip div.cell:nth-child(-n+2) {
+      border-bottom: 1px solid var(--rule-soft);
+    }
+
+    .entry {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .when::before {
+      display: none;
+    }
+
+    .srow {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .cols {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
@@ -291,7 +933,19 @@
 
   <nav class="langsw" aria-label="Language">
     <div class="keys">
-      <button type="button" class="themebtn" aria-label="Light / dark"><svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path></svg><svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"></path></svg><span class="ico-sun"><span data-t="ro">Deschis</span><span data-t="ru">Светлая</span><span data-t="en">Light</span><span data-t="fr">Clair</span></span><span class="ico-moon"><span data-t="ro">Închis</span><span data-t="ru">Тёмная</span><span data-t="en">Dark</span><span data-t="fr">Sombre</span></span></button>
+      <button type="button" class="themebtn" aria-label="Light / dark"><svg class="ico-sun" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path
+            d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7">
+          </path>
+        </svg><svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"></path>
+        </svg><span class="ico-sun"><span data-t="ro">Deschis</span><span data-t="ru">Светлая</span><span
+            data-t="en">Light</span><span data-t="fr">Clair</span></span><span class="ico-moon"><span
+            data-t="ro">Închis</span><span data-t="ru">Тёмная</span><span data-t="en">Dark</span><span
+            data-t="fr">Sombre</span></span></button>
       <button type="button" data-l="ro" aria-pressed="true">RO</button>
       <button type="button" data-l="ru" aria-pressed="false">RU</button>
       <button type="button" data-l="en" aria-pressed="false">EN</button>
@@ -306,19 +960,58 @@
         <p class="tagline">
           <span data-t="ro">Dezvoltator Backend / Full-Stack — Symfony · Node.js · microservicii event-driven</span>
           <span data-t="ru">Backend / Full-Stack разработчик — Symfony · Node.js · событийные микросервисы</span>
-          <span data-t="en">Backend / Full-Stack Developer — Symfony · Node.js · event-driven microservices</span><span data-t="fr">Développeur Backend / Full-Stack — Symfony · Node.js · microservices événementiels</span>
+          <span data-t="en">Backend / Full-Stack Developer — Symfony · Node.js · event-driven microservices</span><span
+            data-t="fr">Développeur Backend / Full-Stack — Symfony · Node.js · microservices événementiels</span>
         </p>
         <p class="pitch">
-          <span data-t="ro">Construiesc serviciile din spatele produselor de comunicare în timp real: brokeri de mesaje, straturi de socket-uri, baze de date orientate pe documente și API-urile care le leagă. Cel mai recent, un serviciu de chat de echipă dus de la un repository gol până în producție.</span>
-          <span data-t="ru">Строю сервисы, на которых работают продукты реального времени: брокеры сообщений, сокет-слой, документные хранилища и API, которые всё это связывают. Последний из них — сервис командного чата, доведённый от пустого репозитория до продакшена.</span>
-          <span data-t="en">I build the services behind real-time communication products: message brokers, socket layers, document stores and the APIs that tie them together. Most recently, a team-chat service taken from an empty repository to production.</span><span data-t="fr">Je construis les services qui font tourner les produits de communication en temps réel : brokers de messages, couche socket, bases orientées documents et les API qui relient le tout. Le dernier en date : un service de chat d'équipe mené d'un dépôt vide jusqu'à la production.</span>
+          <span data-t="ro">Construiesc serviciile din spatele produselor de comunicare în timp real: brokeri de mesaje,
+            straturi de socket-uri, baze de date orientate pe documente și API-urile care le leagă. Cel mai recent, un
+            serviciu de chat de echipă dus de la un repository gol până în producție.</span>
+          <span data-t="ru">Строю сервисы, на которых работают продукты реального времени: брокеры сообщений,
+            сокет-слой, документные хранилища и API, которые всё это связывают. Последний из них — сервис командного
+            чата, доведённый от пустого репозитория до продакшена.</span>
+          <span data-t="en">I build the services behind real-time communication products: message brokers, socket
+            layers, document stores and the APIs that tie them together. Most recently, a team-chat service taken from
+            an empty repository to production.</span><span data-t="fr">Je construis les services qui font tourner les
+            produits de communication en temps réel : brokers de messages, couche socket, bases orientées documents et
+            les API qui relient le tout. Le dernier en date : un service de chat d'équipe mené d'un dépôt vide jusqu'à
+            la production.</span>
         </p>
         <div class="cta">
-          <span data-t="ro"><a class="btn" href="https://stmihai84.github.io/cv-ro.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Descarcă CV (PDF)</a></span>
-          <span data-t="ru"><a class="btn" href="https://stmihai84.github.io/cv-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Скачать резюме (PDF)</a></span>
-          <span data-t="en"><a class="btn" href="https://stmihai84.github.io/cv-en.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Download CV (PDF)</a></span>
-          <span data-t="fr"><a class="btn" href="https://stmihai84.github.io/cv-fr.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Télécharger le CV (PDF)</a></span>
-          <span class="alt"><span data-t="ro">sau</span><span data-t="ru">или</span><span data-t="en">or</span><span data-t="fr">ou</span><a href="https://stmihai84.github.io/cv-ro.pdf" target="_blank" rel="noopener">RO</a><a href="https://stmihai84.github.io/cv-ru.pdf" target="_blank" rel="noopener">RU</a><a href="https://stmihai84.github.io/cv-en.pdf" target="_blank" rel="noopener">EN</a><a href="https://stmihai84.github.io/cv-fr.pdf" target="_blank" rel="noopener">FR</a></span>
+          <span data-t="ro"><a class="btn" href="https://stmihai84.github.io/cv-ro.pdf" target="_blank"
+              rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="M7 11l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+              </svg>Descarcă CV (PDF)</a></span>
+          <span data-t="ru"><a class="btn" href="https://stmihai84.github.io/cv-ru.pdf" target="_blank"
+              rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="M7 11l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+              </svg>Скачать резюме (PDF)</a></span>
+          <span data-t="en"><a class="btn" href="https://stmihai84.github.io/cv-en.pdf" target="_blank"
+              rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="M7 11l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+              </svg>Download CV (PDF)</a></span>
+          <span data-t="fr"><a class="btn" href="https://stmihai84.github.io/cv-fr.pdf" target="_blank"
+              rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <path d="M7 11l5 5 5-5"></path>
+                <path d="M4 20h16"></path>
+              </svg>Télécharger le CV (PDF)</a></span>
+          <span class="alt"><span data-t="ro">sau</span><span data-t="ru">или</span><span data-t="en">or</span><span
+              data-t="fr">ou</span><a href="https://stmihai84.github.io/cv-ro.pdf" target="_blank"
+              rel="noopener">RO</a><a href="https://stmihai84.github.io/cv-ru.pdf" target="_blank"
+              rel="noopener">RU</a><a href="https://stmihai84.github.io/cv-en.pdf" target="_blank"
+              rel="noopener">EN</a><a href="https://stmihai84.github.io/cv-fr.pdf" target="_blank"
+              rel="noopener">FR</a></span>
         </div>
       </div>
       <div class="patch">
@@ -327,84 +1020,119 @@
           <span class="v"><a href="mailto:stmihai84@gmail.com">stmihai84@gmail.com</a></span>
         </div>
         <div class="field">
-          <span class="k"><span data-t="ro">Locație</span><span data-t="ru">Местоположение</span><span data-t="en">Based in</span><span data-t="fr">Basé à</span></span>
-          <span class="v"><span data-t="ro">Chișinău, Moldova</span><span data-t="ru">Кишинёв, Молдова</span><span data-t="en">Chișinău, Moldova</span><span data-t="fr">Chișinău, Moldavie</span></span>
+          <span class="k"><span data-t="ro">Locație</span><span data-t="ru">Местоположение</span><span data-t="en">Based
+              in</span><span data-t="fr">Basé à</span></span>
+          <span class="v"><span data-t="ro">Chișinău, Moldova</span><span data-t="ru">Кишинёв, Молдова</span><span
+              data-t="en">Chișinău, Moldova</span><span data-t="fr">Chișinău, Moldavie</span></span>
         </div>
         <div class="field">
-          <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span data-t="en">Working languages</span><span data-t="fr">Langues de travail</span></span>
+          <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span
+              data-t="en">Working languages</span><span data-t="fr">Langues de travail</span></span>
           <span class="v langs"><b>RO</b><b>FR</b><b>RU</b><b>EN</b></span>
         </div>
       </div>
     </div>
     <div class="strip">
       <div class="cell">
-        <div class="n"><span data-t="ro">6 ani</span><span data-t="ru">6 лет</span><span data-t="en">6 yrs</span><span data-t="fr">6 ans</span></div>
-        <div class="l"><span data-t="ro">Experiență comercială</span><span data-t="ru">Коммерческий опыт</span><span data-t="en">Commercial</span><span data-t="fr">En entreprise</span></div>
+        <div class="n"><span data-t="ro">6 ani</span><span data-t="ru">6 лет</span><span data-t="en">6 yrs</span><span
+            data-t="fr">6 ans</span></div>
+        <div class="l"><span data-t="ro">Experiență comercială</span><span data-t="ru">Коммерческий опыт</span><span
+            data-t="en">Commercial</span><span data-t="fr">En entreprise</span></div>
       </div>
       <div class="cell">
         <div class="n">PHP · JS · TS</div>
-        <div class="l"><span data-t="ro">Limbaje zilnice</span><span data-t="ru">Языки в работе</span><span data-t="en">Daily languages</span><span data-t="fr">Langages quotidiens</span></div>
+        <div class="l"><span data-t="ro">Limbaje zilnice</span><span data-t="ru">Языки в работе</span><span
+            data-t="en">Daily languages</span><span data-t="fr">Langages quotidiens</span></div>
       </div>
       <div class="cell">
         <div class="n">6</div>
-        <div class="l"><span data-t="ro">Servicii construite</span><span data-t="ru">Своих сервисов</span><span data-t="en">Services owned</span><span data-t="fr">Services créés</span></div>
+        <div class="l"><span data-t="ro">Servicii construite</span><span data-t="ru">Своих сервисов</span><span
+            data-t="en">Services owned</span><span data-t="fr">Services créés</span></div>
       </div>
       <div class="cell">
         <div class="n">4</div>
-        <div class="l"><span data-t="ro">Limbi vorbite</span><span data-t="ru">Языков</span><span data-t="en">Spoken languages</span><span data-t="fr">Langues parlées</span></div>
+        <div class="l"><span data-t="ro">Limbi vorbite</span><span data-t="ru">Языков</span><span data-t="en">Spoken
+            languages</span><span data-t="fr">Langues parlées</span></div>
       </div>
     </div>
   </div>
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Ce am construit ultima dată</span><span data-t="ru">Последнее, что я построил</span><span data-t="en">What I built last</span><span data-t="fr">Ce que j'ai construit en dernier</span></h2>
+      <h2><span data-t="ro">Ce am construit ultima dată</span><span data-t="ru">Последнее, что я построил</span><span
+          data-t="en">What I built last</span><span data-t="fr">Ce que j'ai construit en dernier</span></h2>
       <span class="line"></span>
-      <span class="meta"><span data-t="ro">Serviciul de chat Vylo</span><span data-t="ru">Чат-сервис Vylo</span><span data-t="en">Vylo chat service</span><span data-t="fr">Service de chat Vylo</span></span>
+      <span class="meta"><span data-t="ro">Serviciul de chat Vylo</span><span data-t="ru">Чат-сервис Vylo</span><span
+          data-t="en">Vylo chat service</span><span data-t="fr">Service de chat Vylo</span></span>
     </div>
     <div class="diagram">
       <div class="cap">
         <span data-t="ro">Traseul unui mesaj — de la cererea HTTP la clientul conectat</span>
         <span data-t="ru">Путь сообщения — от HTTP-запроса до подключённого клиента</span>
-        <span data-t="en">Message path — from HTTP request to connected client</span><span data-t="fr">Trajet d'un message — de la requête HTTP au client connecté</span>
+        <span data-t="en">Message path — from HTTP request to connected client</span><span data-t="fr">Trajet d'un
+          message — de la requête HTTP au client connecté</span>
       </div>
-      <svg viewBox="0 0 700 196" role="img" aria-label="Symfony API → RabbitMQ → Node.js Socket.IO → clients; MongoDB and Elasticsearch back the API, Redis backs the socket layer.">
+      <svg viewBox="0 0 700 196" role="img"
+        aria-label="Symfony API → RabbitMQ → Node.js Socket.IO → clients; MongoDB and Elasticsearch back the API, Redis backs the socket layer.">
         <defs>
           <marker id="ah" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
             <path d="M0 0 L7 3.5 L0 7 Z" class="f-brass"></path>
           </marker>
         </defs>
         <g class="s-brass" stroke-width="1.4" fill="none" marker-end="url(#ah)">
-          <path d="M172 62 H206"></path><path d="M330 62 H364"></path><path d="M516 62 H556"></path>
+          <path d="M172 62 H206"></path>
+          <path d="M330 62 H364"></path>
+          <path d="M516 62 H556"></path>
         </g>
         <g class="s-brass flow" stroke-width="1.4" fill="none" opacity=".85">
-          <path d="M172 62 H206"></path><path d="M330 62 H364"></path><path d="M516 62 H556"></path>
+          <path d="M172 62 H206"></path>
+          <path d="M330 62 H364"></path>
+          <path d="M516 62 H556"></path>
         </g>
         <g class="s-rule" stroke-width="1.2" fill="none">
-          <path d="M60 88 V132"></path><path d="M132 88 V112 H196 V132"></path><path d="M440 88 V132"></path>
+          <path d="M60 88 V132"></path>
+          <path d="M132 88 V112 H196 V132"></path>
+          <path d="M440 88 V132"></path>
         </g>
 
         <rect x="14" y="38" width="158" height="50" rx="2" class="n-box" stroke-width="1.2"></rect>
-        <text x="93" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600">Symfony API</text>
-        <text x="93" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5">API Platform</text>
+        <text x="93" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600">Symfony API</text>
+        <text x="93" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace"
+          font-size="10.5">API Platform</text>
 
         <rect x="206" y="38" width="124" height="50" rx="2" class="n-box brass" stroke-width="1.2"></rect>
-        <text x="268" y="60" text-anchor="middle" class="t-brass" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600">RabbitMQ</text>
-        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ro">broker</text>
-        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ru">брокер</text>
-        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">broker</text><text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">broker</text>
+        <text x="268" y="60" text-anchor="middle" class="t-brass" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600">RabbitMQ</text>
+        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace"
+          font-size="10.5" data-t="ro">broker</text>
+        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace"
+          font-size="10.5" data-t="ru">брокер</text>
+        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace"
+          font-size="10.5" data-t="en">broker</text><text x="268" y="76" text-anchor="middle" class="t-brass"
+          font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">broker</text>
 
         <rect x="364" y="38" width="152" height="50" rx="2" class="n-box" stroke-width="1.2"></rect>
-        <text x="440" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600">Node · Socket.IO</text>
-        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ro">server real-time</text>
-        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ru">реальное время</text>
-        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">real-time server</text><text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">serveur temps réel</text>
+        <text x="440" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600">Node · Socket.IO</text>
+        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5"
+          data-t="ro">server real-time</text>
+        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5"
+          data-t="ru">реальное время</text>
+        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5"
+          data-t="en">real-time server</text><text x="440" y="76" text-anchor="middle" class="t-mut"
+          font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">serveur temps réel</text>
 
         <rect x="556" y="38" width="130" height="50" rx="2" class="n-box plain" stroke-width="1.2"></rect>
-        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="ro">Clienți</text>
-        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="ru">Клиенты</text>
-        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="en">Clients</text><text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="fr">Clients</text>
-        <text x="621" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5">web · desktop</text>
+        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600" data-t="ro">Clienți</text>
+        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600" data-t="ru">Клиенты</text>
+        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14"
+          font-weight="600" data-t="en">Clients</text><text x="621" y="60" text-anchor="middle" class="t-ink"
+          font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="fr">Clients</text>
+        <text x="621" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace"
+          font-size="10.5">web · desktop</text>
 
         <g font-family="IBM Plex Mono, monospace" font-size="11">
           <rect x="14" y="132" width="92" height="30" rx="2" class="n-sub" stroke-width="1"></rect>
@@ -418,13 +1146,16 @@
         <g font-family="IBM Plex Mono, monospace" font-size="10" class="t-mut">
           <text x="60" y="178" text-anchor="middle" data-t="ro">documente</text>
           <text x="60" y="178" text-anchor="middle" data-t="ru">документы</text>
-          <text x="60" y="178" text-anchor="middle" data-t="en">documents</text><text x="60" y="178" text-anchor="middle" data-t="fr">documents</text>
+          <text x="60" y="178" text-anchor="middle" data-t="en">documents</text><text x="60" y="178"
+            text-anchor="middle" data-t="fr">documents</text>
           <text x="196" y="178" text-anchor="middle" data-t="ro">index de căutare</text>
           <text x="196" y="178" text-anchor="middle" data-t="ru">поисковый индекс</text>
-          <text x="196" y="178" text-anchor="middle" data-t="en">search index</text><text x="196" y="178" text-anchor="middle" data-t="fr">index de recherche</text>
+          <text x="196" y="178" text-anchor="middle" data-t="en">search index</text><text x="196" y="178"
+            text-anchor="middle" data-t="fr">index de recherche</text>
           <text x="440" y="178" text-anchor="middle" data-t="ro">adaptor de socket-uri</text>
           <text x="440" y="178" text-anchor="middle" data-t="ru">адаптер сокетов</text>
-          <text x="440" y="178" text-anchor="middle" data-t="en">socket adapter</text><text x="440" y="178" text-anchor="middle" data-t="fr">adaptateur de sockets</text>
+          <text x="440" y="178" text-anchor="middle" data-t="en">socket adapter</text><text x="440" y="178"
+            text-anchor="middle" data-t="fr">adaptateur de sockets</text>
         </g>
       </svg>
     </div>
@@ -432,9 +1163,11 @@
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Traseu</span><span data-t="ru">Путь</span><span data-t="en">Track</span><span data-t="fr">Parcours</span></h2>
+      <h2><span data-t="ro">Traseu</span><span data-t="ru">Путь</span><span data-t="en">Track</span><span
+          data-t="fr">Parcours</span></h2>
       <span class="line"></span>
-      <span class="meta"><span data-t="ro">2006 → azi</span><span data-t="ru">2006 → сегодня</span><span data-t="en">2006 → today</span><span data-t="fr">2006 → aujourd'hui</span></span>
+      <span class="meta"><span data-t="ro">2006 → azi</span><span data-t="ru">2006 → сегодня</span><span
+          data-t="en">2006 → today</span><span data-t="fr">2006 → aujourd'hui</span></span>
     </div>
 
     <div class="track">
@@ -449,7 +1182,8 @@
           <p class="role">
             <span data-t="ro">Dezvoltator Backend / Full-Stack</span>
             <span data-t="ru">Backend / Full-Stack разработчик</span>
-            <span data-t="en">Backend / Full-Stack Developer</span><span data-t="fr">Développeur Backend / Full-Stack</span>
+            <span data-t="en">Backend / Full-Stack Developer</span><span data-t="fr">Développeur Backend /
+              Full-Stack</span>
             <span class="org">· NIXAP Development SRL</span>
           </p>
 
@@ -463,43 +1197,84 @@
               </span>
             </div>
             <p class="what">
-              <span data-t="ro">Platformă de comunicații de business: VoIP, SMS, chat de echipă, videoconferință, CRM pentru call-center.</span>
-              <span data-t="ru">Платформа бизнес-коммуникаций: VoIP, SMS, командный чат, видеоконференции, CRM для колл-центра.</span>
-              <span data-t="en">Business-communications platform: VoIP, SMS, team chat, video conferencing, call-centre CRM.</span><span data-t="fr">Plateforme de communication d'entreprise : VoIP, SMS, chat d'équipe, visioconférence, CRM de centre d'appels.</span>
+              <span data-t="ro">Platformă de comunicații de business: VoIP, SMS, chat de echipă, videoconferință, CRM
+                pentru call-center.</span>
+              <span data-t="ru">Платформа бизнес-коммуникаций: VoIP, SMS, командный чат, видеоконференции, CRM для
+                колл-центра.</span>
+              <span data-t="en">Business-communications platform: VoIP, SMS, team chat, video conferencing, call-centre
+                CRM.</span><span data-t="fr">Plateforme de communication d'entreprise : VoIP, SMS, chat d'équipe,
+                visioconférence, CRM de centre d'appels.</span>
             </p>
             <ul>
               <li>
-                <span data-t="ro"><b>Am construit serviciul de chat de la un repository gol</b> — Symfony 7.4 și API Platform peste MongoDB, cu căutare full-text în Elasticsearch și atașamente pe stocare compatibilă S3, servite printr-o rută care verifică apartenența la cameră.</span>
-                <span data-t="ru"><b>Построил чат-сервис с нуля</b> — Symfony 7.4 и API Platform поверх MongoDB, полнотекстовый поиск в Elasticsearch и вложения в S3-совместимом хранилище, отдаваемые через маршрут, который проверяет членство в комнате.</span>
-                <span data-t="en"><b>Built the chat service from an empty repository</b> — Symfony 7.4 and API Platform over MongoDB, with Elasticsearch full-text search and S3-compatible attachments served behind a route that enforces room membership.</span><span data-t="fr"><b>J'ai construit le service de chat à partir d'un dépôt vide</b> — Symfony 7.4 et API Platform sur MongoDB, avec recherche plein texte Elasticsearch et pièces jointes sur stockage compatible S3, servies par une route qui vérifie l'appartenance au salon.</span>
+                <span data-t="ro"><b>Am construit serviciul de chat de la un repository gol</b> — Symfony 7.4 și API
+                  Platform peste MongoDB, cu căutare full-text în Elasticsearch și atașamente pe stocare compatibilă S3,
+                  servite printr-o rută care verifică apartenența la cameră.</span>
+                <span data-t="ru"><b>Построил чат-сервис с нуля</b> — Symfony 7.4 и API Platform поверх MongoDB,
+                  полнотекстовый поиск в Elasticsearch и вложения в S3-совместимом хранилище, отдаваемые через маршрут,
+                  который проверяет членство в комнате.</span>
+                <span data-t="en"><b>Built the chat service from an empty repository</b> — Symfony 7.4 and API Platform
+                  over MongoDB, with Elasticsearch full-text search and S3-compatible attachments served behind a route
+                  that enforces room membership.</span><span data-t="fr"><b>J'ai construit le service de chat à partir
+                    d'un dépôt vide</b> — Symfony 7.4 et API Platform sur MongoDB, avec recherche plein texte
+                  Elasticsearch et pièces jointes sur stockage compatible S3, servies par une route qui vérifie
+                  l'appartenance au salon.</span>
               </li>
               <li>
-                <span data-t="ro"><b>Am proiectat pipeline-ul de evenimente din spate</b> — Symfony publică în RabbitMQ, un server Node.js cu Socket.IO consumă și difuzează, iar Redis scalează socket-urile pe mai multe instanțe.</span>
-                <span data-t="ru"><b>Спроектировал событийный конвейер за ним</b> — Symfony публикует в RabbitMQ, сервер на Node.js и Socket.IO читает и рассылает, Redis масштабирует сокеты между инстансами.</span>
-                <span data-t="en"><b>Designed the event pipeline behind it</b> — Symfony publishes to RabbitMQ, a Node.js and Socket.IO server consumes and broadcasts, Redis scales the sockets across instances.</span><span data-t="fr"><b>J'ai conçu le pipeline d'événements derrière</b> — Symfony publie dans RabbitMQ, un serveur Node.js et Socket.IO consomme et diffuse, Redis répartit les sockets entre les instances.</span>
+                <span data-t="ro"><b>Am proiectat pipeline-ul de evenimente din spate</b> — Symfony publică în RabbitMQ,
+                  un server Node.js cu Socket.IO consumă și difuzează, iar Redis scalează socket-urile pe mai multe
+                  instanțe.</span>
+                <span data-t="ru"><b>Спроектировал событийный конвейер за ним</b> — Symfony публикует в RabbitMQ, сервер
+                  на Node.js и Socket.IO читает и рассылает, Redis масштабирует сокеты между инстансами.</span>
+                <span data-t="en"><b>Designed the event pipeline behind it</b> — Symfony publishes to RabbitMQ, a
+                  Node.js and Socket.IO server consumes and broadcasts, Redis scales the sockets across
+                  instances.</span><span data-t="fr"><b>J'ai conçu le pipeline d'événements derrière</b> — Symfony
+                  publie dans RabbitMQ, un serveur Node.js et Socket.IO consomme et diffuse, Redis répartit les sockets
+                  entre les instances.</span>
               </li>
               <li>
-                <span data-t="ro"><b>Serviciu de management al sarcinilor</b>, cu un model de permisiuni deny-by-default construit pe voters Symfony.</span>
-                <span data-t="ru"><b>Сервис управления задачами</b> с моделью прав deny-by-default на воутерах Symfony.</span>
-                <span data-t="en"><b>Task-management service</b> with a deny-by-default permission model built on Symfony voters.</span><span data-t="fr"><b>Service de gestion des tâches</b> avec un modèle de permissions deny-by-default bâti sur les voters Symfony.</span>
+                <span data-t="ro"><b>Serviciu de management al sarcinilor</b>, cu un model de permisiuni deny-by-default
+                  construit pe voters Symfony.</span>
+                <span data-t="ru"><b>Сервис управления задачами</b> с моделью прав deny-by-default на воутерах
+                  Symfony.</span>
+                <span data-t="en"><b>Task-management service</b> with a deny-by-default permission model built on
+                  Symfony voters.</span><span data-t="fr"><b>Service de gestion des tâches</b> avec un modèle de
+                  permissions deny-by-default bâti sur les voters Symfony.</span>
               </li>
               <li>
-                <span data-t="ro"><b>Serviciu de contacte</b> extras din API-ul monolitic, delimitat prin identificatori în loc de chei străine între servicii.</span>
-                <span data-t="ru"><b>Сервис контактов</b>, выделенный из монолитного API, с границами по идентификаторам вместо межсервисных внешних ключей.</span>
-                <span data-t="en"><b>Contacts service</b> extracted from the monolithic API, bounded by identifiers rather than cross-service foreign keys.</span><span data-t="fr"><b>Service de contacts</b> extrait de l'API monolithique, délimité par identifiants plutôt que par clés étrangères entre services.</span>
+                <span data-t="ro"><b>Serviciu de contacte</b> extras din API-ul monolitic, delimitat prin identificatori
+                  în loc de chei străine între servicii.</span>
+                <span data-t="ru"><b>Сервис контактов</b>, выделенный из монолитного API, с границами по идентификаторам
+                  вместо межсервисных внешних ключей.</span>
+                <span data-t="en"><b>Contacts service</b> extracted from the monolithic API, bounded by identifiers
+                  rather than cross-service foreign keys.</span><span data-t="fr"><b>Service de contacts</b> extrait de
+                  l'API monolithique, délimité par identifiants plutôt que par clés étrangères entre services.</span>
               </li>
               <li>
-                <span data-t="ro"><b>Serviciu de agenți vocali</b> în TypeScript, care creează agenți AI pe ElevenLabs și Deepgram, scriind întâi la furnizor, ca înregistrările locale să nu divergă.</span>
-                <span data-t="ru"><b>Сервис голосовых агентов</b> на TypeScript: создаёт AI-агентов в ElevenLabs и Deepgram, записывая сначала у провайдера, чтобы локальные записи не расходились.</span>
-                <span data-t="en"><b>Voice-agents service</b> in TypeScript that provisions AI agents on ElevenLabs and Deepgram, writing to the provider first so local records never drift.</span><span data-t="fr"><b>Service d'agents vocaux</b> en TypeScript, qui crée des agents IA sur ElevenLabs et Deepgram en écrivant d'abord chez le fournisseur, pour que les enregistrements locaux ne divergent jamais.</span>
+                <span data-t="ro"><b>Serviciu de agenți vocali</b> în TypeScript, care creează agenți AI pe ElevenLabs
+                  și Deepgram, scriind întâi la furnizor, ca înregistrările locale să nu divergă.</span>
+                <span data-t="ru"><b>Сервис голосовых агентов</b> на TypeScript: создаёт AI-агентов в ElevenLabs и
+                  Deepgram, записывая сначала у провайдера, чтобы локальные записи не расходились.</span>
+                <span data-t="en"><b>Voice-agents service</b> in TypeScript that provisions AI agents on ElevenLabs and
+                  Deepgram, writing to the provider first so local records never drift.</span><span
+                  data-t="fr"><b>Service d'agents vocaux</b> en TypeScript, qui crée des agents IA sur ElevenLabs et
+                  Deepgram en écrivant d'abord chez le fournisseur, pour que les enregistrements locaux ne divergent
+                  jamais.</span>
               </li>
               <li>
-                <span data-t="ro">Plus notificări, abonamente Stripe și integrări telecom în API-ul central, un serviciu de geolocalizare pe PostGIS și clientul desktop Electron.</span>
-                <span data-t="ru">Плюс уведомления, подписки Stripe и телеком-интеграции в основном API, геолокационный сервис на PostGIS и десктоп-клиент на Electron.</span>
-                <span data-t="en">Plus notifications, Stripe subscriptions and telecom integrations in the core API, a PostGIS geolocation service, and the Electron desktop client.</span><span data-t="fr">Plus les notifications, les abonnements Stripe et les intégrations télécom dans l'API centrale, un service de géolocalisation PostGIS et le client bureau Electron.</span>
+                <span data-t="ro">Plus notificări, abonamente Stripe și integrări telecom în API-ul central, un serviciu
+                  de geolocalizare pe PostGIS și clientul desktop Electron.</span>
+                <span data-t="ru">Плюс уведомления, подписки Stripe и телеком-интеграции в основном API, геолокационный
+                  сервис на PostGIS и десктоп-клиент на Electron.</span>
+                <span data-t="en">Plus notifications, Stripe subscriptions and telecom integrations in the core API, a
+                  PostGIS geolocation service, and the Electron desktop client.</span><span data-t="fr">Plus les
+                  notifications, les abonnements Stripe et les intégrations télécom dans l'API centrale, un service de
+                  géolocalisation PostGIS et le client bureau Electron.</span>
               </li>
             </ul>
-            <div class="chips"><span>Symfony 7.4</span><span>PHP 8.4</span><span>MongoDB</span><span>RabbitMQ</span><span>Socket.IO</span><span>Elasticsearch</span><span>Redis</span><span>TypeScript</span><span>Docker</span></div>
+            <div class="chips"><span>Symfony 7.4</span><span>PHP
+                8.4</span><span>MongoDB</span><span>RabbitMQ</span><span>Socket.IO</span><span>Elasticsearch</span><span>Redis</span><span>TypeScript</span><span>Docker</span>
+            </div>
           </div>
 
           <div class="proj">
@@ -514,26 +1289,36 @@
             <p class="what">
               <span data-t="ro">Aplicație pentru piața din România.</span>
               <span data-t="ru">Приложение для румынского рынка.</span>
-              <span data-t="en">Application for the Romanian market.</span><span data-t="fr">Application pour le marché roumain.</span>
+              <span data-t="en">Application for the Romanian market.</span><span data-t="fr">Application pour le marché
+                roumain.</span>
             </p>
             <ul>
               <li>
-                <span data-t="ro">Structuri de bază de date și migrări pentru o schemă de producție în schimbare continuă.</span>
+                <span data-t="ro">Structuri de bază de date și migrări pentru o schemă de producție în schimbare
+                  continuă.</span>
                 <span data-t="ru">Структуры БД и миграции для постоянно меняющейся продакшен-схемы.</span>
-                <span data-t="en">Database structures and migrations for a production schema under constant change.</span><span data-t="fr">Structures de base de données et migrations pour un schéma de production en évolution constante.</span>
+                <span data-t="en">Database structures and migrations for a production schema under constant
+                  change.</span><span data-t="fr">Structures de base de données et migrations pour un schéma de
+                  production en évolution constante.</span>
               </li>
               <li>
-                <span data-t="ro">Blocare șofer–pasager, mesagerie în aplicație, actualizări în timp real, interfață multilingvă.</span>
-                <span data-t="ru">Блокировка водитель–пассажир, чат в приложении, обновления в реальном времени, многоязычный интерфейс.</span>
-                <span data-t="en">Driver–passenger blocking, in-app messaging, real-time updates, multilingual interface.</span><span data-t="fr">Blocage chauffeur–passager, messagerie intégrée, mises à jour en temps réel, interface multilingue.</span>
+                <span data-t="ro">Blocare șofer–pasager, mesagerie în aplicație, actualizări în timp real, interfață
+                  multilingvă.</span>
+                <span data-t="ru">Блокировка водитель–пассажир, чат в приложении, обновления в реальном времени,
+                  многоязычный интерфейс.</span>
+                <span data-t="en">Driver–passenger blocking, in-app messaging, real-time updates, multilingual
+                  interface.</span><span data-t="fr">Blocage chauffeur–passager, messagerie intégrée, mises à jour en
+                  temps réel, interface multilingue.</span>
               </li>
               <li>
                 <span data-t="ro">Componente Vue.js pentru vizualizarea datelor în aplicație.</span>
                 <span data-t="ru">Собственные Vue.js-компоненты для визуализации данных.</span>
-                <span data-t="en">Custom Vue.js components for in-app data visualisation.</span><span data-t="fr">Composants Vue.js sur mesure pour la visualisation des données dans l'application.</span>
+                <span data-t="en">Custom Vue.js components for in-app data visualisation.</span><span
+                  data-t="fr">Composants Vue.js sur mesure pour la visualisation des données dans l'application.</span>
               </li>
             </ul>
-            <div class="chips"><span>Symfony</span><span>Laravel</span><span>Vue.js</span><span>MySQL</span><span>Redis</span></div>
+            <div class="chips">
+              <span>Symfony</span><span>Laravel</span><span>Vue.js</span><span>MySQL</span><span>Redis</span></div>
           </div>
         </div>
       </article>
@@ -542,19 +1327,26 @@
         <div class="when">2022 — 2024</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator PHP / Full-Stack</span><span data-t="ru">PHP / Full-Stack разработчик</span><span data-t="en">PHP / Full-Stack Developer</span><span data-t="fr">Développeur PHP / Full-Stack</span>
+            <span data-t="ro">Dezvoltator PHP / Full-Stack</span><span data-t="ru">PHP / Full-Stack
+              разработчик</span><span data-t="en">PHP / Full-Stack Developer</span><span data-t="fr">Développeur PHP /
+              Full-Stack</span>
             <span class="org">· ServiciiComplete</span>
           </p>
           <ul>
             <li>
               <span data-t="ro">Fluxuri de înregistrare și cont; date de comenzi, tranzacții și livrări în MySQL.</span>
               <span data-t="ru">Регистрация и аккаунты; данные заказов, транзакций и доставок в MySQL.</span>
-              <span data-t="en">Registration and account flows; order, transaction and delivery data in MySQL.</span><span data-t="fr">Parcours d'inscription et de compte ; données de commandes, transactions et livraisons dans MySQL.</span>
+              <span data-t="en">Registration and account flows; order, transaction and delivery data in
+                MySQL.</span><span data-t="fr">Parcours d'inscription et de compte ; données de commandes, transactions
+                et livraisons dans MySQL.</span>
             </li>
             <li>
-              <span data-t="ro">Am condus un proiect WordPress la comandă, de la cerințele clientului până la lansare.</span>
+              <span data-t="ro">Am condus un proiect WordPress la comandă, de la cerințele clientului până la
+                lansare.</span>
               <span data-t="ru">Вёл заказной проект на WordPress от требований клиента до запуска.</span>
-              <span data-t="en">Led a bespoke WordPress build from client requirements through to launch.</span><span data-t="fr">J'ai piloté un projet WordPress sur mesure, du cahier des charges client jusqu'à la mise en ligne.</span>
+              <span data-t="en">Led a bespoke WordPress build from client requirements through to launch.</span><span
+                data-t="fr">J'ai piloté un projet WordPress sur mesure, du cahier des charges client jusqu'à la mise en
+                ligne.</span>
             </li>
           </ul>
           <div class="chips"><span>PHP</span><span>JavaScript</span><span>MySQL</span><span>WordPress</span></div>
@@ -565,14 +1357,19 @@
         <div class="when">2020 — 2022</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator PHP</span><span data-t="ru">PHP-разработчик</span><span data-t="en">PHP Developer</span><span data-t="fr">Développeur PHP</span>
+            <span data-t="ro">Dezvoltator PHP</span><span data-t="ru">PHP-разработчик</span><span data-t="en">PHP
+              Developer</span><span data-t="fr">Développeur PHP</span>
             <span class="org">· TribePayments</span>
           </p>
           <ul>
             <li>
-              <span data-t="ro">Sisteme de procesare a plăților și integrări cu gateway-uri terțe — un domeniu în care o eroare de rotunjire e un incident.</span>
-              <span data-t="ru">Системы обработки платежей и интеграции со сторонними шлюзами — область, где ошибка округления это инцидент.</span>
-              <span data-t="en">Payment-processing systems and third-party gateway integrations — a domain where a rounding error is an incident.</span><span data-t="fr">Systèmes de traitement des paiements et intégrations de passerelles tierces — un domaine où une erreur d'arrondi est un incident.</span>
+              <span data-t="ro">Sisteme de procesare a plăților și integrări cu gateway-uri terțe — un domeniu în care o
+                eroare de rotunjire e un incident.</span>
+              <span data-t="ru">Системы обработки платежей и интеграции со сторонними шлюзами — область, где ошибка
+                округления это инцидент.</span>
+              <span data-t="en">Payment-processing systems and third-party gateway integrations — a domain where a
+                rounding error is an incident.</span><span data-t="fr">Systèmes de traitement des paiements et
+                intégrations de passerelles tierces — un domaine où une erreur d'arrondi est un incident.</span>
             </li>
           </ul>
           <div class="chips"><span>PHP</span><span>JavaScript</span><span>Payment gateways</span></div>
@@ -583,19 +1380,30 @@
         <div class="when">2019 — 2020</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator Symfony</span><span data-t="ru">Symfony-разработчик</span><span data-t="en">Symfony Developer</span><span data-t="fr">Développeur Symfony</span>
-            <span class="org">· Generation Internet, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></span>
+            <span data-t="ro">Dezvoltator Symfony</span><span data-t="ru">Symfony-разработчик</span><span
+              data-t="en">Symfony Developer</span><span data-t="fr">Développeur Symfony</span>
+            <span class="org">· Generation Internet, <span data-t="ro">Franța</span><span
+                data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></span>
           </p>
           <ul>
             <li>
-              <span data-t="ro">Aplicație de pontaj pentru proiectele clienților: clienții cumpărau ore de dezvoltare, iar programatorii înregistrau consumul din ele.</span>
-              <span data-t="ru">Приложение учёта времени по проектам клиентов: клиенты покупали часы разработки, разработчики списывали их.</span>
-              <span data-t="en">Time-tracking application for client projects: clients purchased development hours, developers logged usage against them.</span><span data-t="fr">Application de suivi du temps pour les projets clients : les clients achetaient des heures de développement, les développeurs y imputaient leur travail.</span>
+              <span data-t="ro">Aplicație de pontaj pentru proiectele clienților: clienții cumpărau ore de dezvoltare,
+                iar programatorii înregistrau consumul din ele.</span>
+              <span data-t="ru">Приложение учёта времени по проектам клиентов: клиенты покупали часы разработки,
+                разработчики списывали их.</span>
+              <span data-t="en">Time-tracking application for client projects: clients purchased development hours,
+                developers logged usage against them.</span><span data-t="fr">Application de suivi du temps pour les
+                projets clients : les clients achetaient des heures de développement, les développeurs y imputaient leur
+                travail.</span>
             </li>
             <li>
-              <span data-t="ro">Anterior, proiecte pentru OK Flora — site-uri administrative interne, gestiune de utilizatori și tranzacții.</span>
-              <span data-t="ru">Ранее — проекты для OK Flora: внутренние административные сайты, управление пользователями и транзакциями.</span>
-              <span data-t="en">Earlier project work for OK Flora — internal administrative sites, user and transaction management.</span><span data-t="fr">Auparavant, projets pour OK Flora — sites d'administration internes, gestion des utilisateurs et des transactions.</span>
+              <span data-t="ro">Anterior, proiecte pentru OK Flora — site-uri administrative interne, gestiune de
+                utilizatori și tranzacții.</span>
+              <span data-t="ru">Ранее — проекты для OK Flora: внутренние административные сайты, управление
+                пользователями и транзакциями.</span>
+              <span data-t="en">Earlier project work for OK Flora — internal administrative sites, user and transaction
+                management.</span><span data-t="fr">Auparavant, projets pour OK Flora — sites d'administration internes,
+                gestion des utilisateurs et des transactions.</span>
             </li>
           </ul>
           <div class="chips"><span>Symfony</span><span>Sonata Admin</span><span>MySQL</span></div>
@@ -611,9 +1419,18 @@
             <span data-t="en">France — hospitality</span><span data-t="fr">France — hôtellerie</span>
           </p>
           <p>
-            <span data-t="ro">Treisprezece ani de muncă cu normă întreagă în hoteluri din Franța, economisind ca să îmi finanțez întoarcerea în dezvoltarea software. M-am recalificat în 2019 printr-un program intensiv finanțat de stat și am revenit în domeniu ca programator. De acolo vine și franceza.</span>
-            <span data-t="ru">Тринадцать лет полной занятости в отелях во Франции — копил, чтобы оплатить возвращение в разработку. В 2019 прошёл интенсивную переподготовку по государственной программе и вернулся в профессию разработчиком. Оттуда же и французский.</span>
-            <span data-t="en">Thirteen years working full-time in hotels in France, saving to finance a return to software development. Retrained in 2019 through an intensive state-funded programme and re-entered the field as a developer. It is also where the French comes from.</span><span data-t="fr">Treize ans à temps plein dans l'hôtellerie en France, à épargner pour financer un retour au développement logiciel. Reconversion en 2019 via une formation intensive financée par l'État, puis retour dans le métier comme développeur. C'est aussi de là que vient le français.</span>
+            <span data-t="ro">Treisprezece ani de muncă cu normă întreagă în hoteluri din Franța, economisind ca să îmi
+              finanțez întoarcerea în dezvoltarea software. M-am recalificat în 2019 printr-un program intensiv finanțat
+              de stat și am revenit în domeniu ca programator. De acolo vine și franceza.</span>
+            <span data-t="ru">Тринадцать лет полной занятости в отелях во Франции — копил, чтобы оплатить возвращение в
+              разработку. В 2019 прошёл интенсивную переподготовку по государственной программе и вернулся в профессию
+              разработчиком. Оттуда же и французский.</span>
+            <span data-t="en">Thirteen years working full-time in hotels in France, saving to finance a return to
+              software development. Retrained in 2019 through an intensive state-funded programme and re-entered the
+              field as a developer. It is also where the French comes from.</span><span data-t="fr">Treize ans à temps
+              plein dans l'hôtellerie en France, à épargner pour financer un retour au développement logiciel.
+              Reconversion en 2019 via une formation intensive financée par l'État, puis retour dans le métier comme
+              développeur. C'est aussi de là que vient le français.</span>
           </p>
         </div>
       </article>
@@ -623,147 +1440,180 @@
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Tehnologii</span><span data-t="ru">Стек</span><span data-t="en">Stack</span><span data-t="fr">Technologies</span></h2>
+      <h2><span data-t="ro">Tehnologii</span><span data-t="ru">Стек</span><span data-t="en">Stack</span><span
+          data-t="fr">Technologies</span></h2>
       <span class="line"></span>
       <span class="meta">
         <span data-t="ro">evidențiate = folosite anul acesta</span>
         <span data-t="ru">выделены = в работе в этом году</span>
-        <span data-t="en">highlighted = used this year</span><span data-t="fr">en surbrillance = utilisé cette année</span>
+        <span data-t="en">highlighted = used this year</span><span data-t="fr">en surbrillance = utilisé cette
+          année</span>
       </span>
     </div>
     <dl class="stack">
       <div class="srow">
-        <dt><span data-t="ro">Limbaje</span><span data-t="ru">Языки</span><span data-t="en">Languages</span><span data-t="fr">Langages</span></dt>
+        <dt><span data-t="ro">Limbaje</span><span data-t="ru">Языки</span><span data-t="en">Languages</span><span
+            data-t="fr">Langages</span></dt>
         <dd><i class="key">PHP 8.4</i><i class="key">TypeScript</i><i class="key">JavaScript</i><i>SQL</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Backend</span><span data-t="ru">Бэкенд</span><span data-t="en">Backend</span><span data-t="fr">Backend</span></dt>
-        <dd><i class="key">Symfony 7 / 8</i><i class="key">API Platform</i><i>Laravel</i><i class="key">Node.js</i><i>Express</i><i>REST</i><i class="key">Microservices</i><i>JWT</i></dd>
+        <dt><span data-t="ro">Backend</span><span data-t="ru">Бэкенд</span><span data-t="en">Backend</span><span
+            data-t="fr">Backend</span></dt>
+        <dd><i class="key">Symfony 7 / 8</i><i class="key">API Platform</i><i>Laravel</i><i
+            class="key">Node.js</i><i>Express</i><i>REST</i><i class="key">Microservices</i><i>JWT</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Date și căutare</span><span data-t="ru">Данные и поиск</span><span data-t="en">Data &amp; search</span><span data-t="fr">Données et recherche</span></dt>
-        <dd><i class="key">MongoDB</i><i>MySQL / MariaDB</i><i>PostgreSQL + PostGIS</i><i class="key">Elasticsearch</i><i class="key">Redis</i></dd>
+        <dt><span data-t="ro">Date și căutare</span><span data-t="ru">Данные и поиск</span><span data-t="en">Data &amp;
+            search</span><span data-t="fr">Données et recherche</span></dt>
+        <dd><i class="key">MongoDB</i><i>MySQL / MariaDB</i><i>PostgreSQL + PostGIS</i><i
+            class="key">Elasticsearch</i><i class="key">Redis</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Mesagerie</span><span data-t="ru">Обмен сообщениями</span><span data-t="en">Messaging</span><span data-t="fr">Messagerie</span></dt>
+        <dt><span data-t="ro">Mesagerie</span><span data-t="ru">Обмен сообщениями</span><span
+            data-t="en">Messaging</span><span data-t="fr">Messagerie</span></dt>
         <dd><i class="key">RabbitMQ</i><i class="key">Socket.IO</i><i>WebSockets</i><i class="key">Event-driven</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Frontend</span><span data-t="ru">Фронтенд</span><span data-t="en">Frontend</span><span data-t="fr">Frontend</span></dt>
+        <dt><span data-t="ro">Frontend</span><span data-t="ru">Фронтенд</span><span data-t="en">Frontend</span><span
+            data-t="fr">Frontend</span></dt>
         <dd><i>Vue.js</i><i>React</i><i>Electron</i><i>CSS</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Infrastructură</span><span data-t="ru">Инфраструктура</span><span data-t="en">Infrastructure</span><span data-t="fr">Infrastructure</span></dt>
+        <dt><span data-t="ro">Infrastructură</span><span data-t="ru">Инфраструктура</span><span
+            data-t="en">Infrastructure</span><span data-t="fr">Infrastructure</span></dt>
         <dd><i class="key">Docker</i><i>Git</i><i>MinIO / S3</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Integrări</span><span data-t="ru">Интеграции</span><span data-t="en">Integrations</span><span data-t="fr">Intégrations</span></dt>
-        <dd><i>Stripe</i><i class="key">ElevenLabs</i><i class="key">Deepgram</i><i>OpenAI</i><i>SIP / WebRTC</i><i>Jitsi</i></dd>
+        <dt><span data-t="ro">Integrări</span><span data-t="ru">Интеграции</span><span
+            data-t="en">Integrations</span><span data-t="fr">Intégrations</span></dt>
+        <dd><i>Stripe</i><i class="key">ElevenLabs</i><i class="key">Deepgram</i><i>OpenAI</i><i>SIP /
+            WebRTC</i><i>Jitsi</i></dd>
       </div>
     </dl>
   </section>
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Formare</span><span data-t="ru">Образование</span><span data-t="en">Background</span><span data-t="fr">Formation</span></h2>
+      <h2><span data-t="ro">Formare</span><span data-t="ru">Образование</span><span data-t="en">Background</span><span
+          data-t="fr">Formation</span></h2>
       <span class="line"></span>
     </div>
     <div class="cols">
       <div>
         <div class="item">
           <span class="d">2022</span>
-          <div class="t">Cefim, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></div>
-          <div class="n"><span data-t="ro">Dezvoltare web.</span><span data-t="ru">Веб-разработка.</span><span data-t="en">Web development.</span><span data-t="fr">Développement web.</span></div>
+          <div class="t">Cefim, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span
+              data-t="en">France</span><span data-t="fr">France</span></div>
+          <div class="n"><span data-t="ro">Dezvoltare web.</span><span data-t="ru">Веб-разработка.</span><span
+              data-t="en">Web development.</span><span data-t="fr">Développement web.</span></div>
         </div>
         <div class="item">
           <span class="d">2019 — 2020</span>
-          <div class="t">EnyEcolinformatique, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></div>
+          <div class="t">EnyEcolinformatique, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span
+              data-t="en">France</span><span data-t="fr">France</span></div>
           <div class="n">
-            <span data-t="ro">Dezvoltare web și mobile web — POO, algoritmi, ingineria programării. Program intensiv de recalificare finanțat de stat.</span>
-            <span data-t="ru">Веб- и мобильная веб-разработка — ООП, алгоритмы, программная инженерия. Интенсивная переподготовка по государственной программе.</span>
-            <span data-t="en">Web and mobile web development — OOP, algorithms, software engineering. Intensive state-funded retraining programme.</span><span data-t="fr">Développement web et mobile — POO, algorithmes, génie logiciel. Formation intensive de reconversion financée par l'État.</span>
+            <span data-t="ro">Dezvoltare web și mobile web — POO, algoritmi, ingineria programării. Program intensiv de
+              recalificare finanțat de stat.</span>
+            <span data-t="ru">Веб- и мобильная веб-разработка — ООП, алгоритмы, программная инженерия. Интенсивная
+              переподготовка по государственной программе.</span>
+            <span data-t="en">Web and mobile web development — OOP, algorithms, software engineering. Intensive
+              state-funded retraining programme.</span><span data-t="fr">Développement web et mobile — POO, algorithmes,
+              génie logiciel. Formation intensive de reconversion financée par l'État.</span>
           </div>
         </div>
         <div class="item">
           <span class="d">2002 — 2006</span>
-          <div class="t"><span data-t="ro">Universitatea Tehnică a Moldovei</span><span data-t="ru">Технический университет Молдовы</span><span data-t="en">Technical University of Moldova</span><span data-t="fr">Université technique de Moldavie</span></div>
+          <div class="t"><span data-t="ro">Universitatea Tehnică a Moldovei</span><span data-t="ru">Технический
+              университет Молдовы</span><span data-t="en">Technical University of Moldova</span><span
+              data-t="fr">Université technique de Moldavie</span></div>
           <div class="n">
             <span data-t="ro">Facultatea de Informatică și Limbi Străine.</span>
             <span data-t="ru">Факультет информатики и иностранных языков.</span>
-            <span data-t="en">Faculty of Informatics and Foreign Languages.</span><span data-t="fr">Faculté d'informatique et de langues étrangères.</span>
+            <span data-t="en">Faculty of Informatics and Foreign Languages.</span><span data-t="fr">Faculté
+              d'informatique et de langues étrangères.</span>
           </div>
         </div>
       </div>
       <div>
         <dl class="lang-row">
-          <dt><span data-t="ro">Română</span><span data-t="ru">Румынский</span><span data-t="en">Romanian</span><span data-t="fr">Roumain</span></dt>
-          <dd><span data-t="ro">Nativ</span><span data-t="ru">Родной</span><span data-t="en">Native</span><span data-t="fr">Langue maternelle</span></dd>
-          <dt><span data-t="ro">Franceză</span><span data-t="ru">Французский</span><span data-t="en">French</span><span data-t="fr">Français</span></dt>
+          <dt><span data-t="ro">Română</span><span data-t="ru">Румынский</span><span data-t="en">Romanian</span><span
+              data-t="fr">Roumain</span></dt>
+          <dd><span data-t="ro">Nativ</span><span data-t="ru">Родной</span><span data-t="en">Native</span><span
+              data-t="fr">Langue maternelle</span></dd>
+          <dt><span data-t="ro">Franceză</span><span data-t="ru">Французский</span><span data-t="en">French</span><span
+              data-t="fr">Français</span></dt>
           <dd>
             <span data-t="ro">Fluent — treisprezece ani trăiți și lucrați în Franța</span>
             <span data-t="ru">Свободно — тринадцать лет жизни и работы во Франции</span>
-            <span data-t="en">Fluent — thirteen years living and working in France</span><span data-t="fr">Courant — treize ans de vie et de travail en France</span>
+            <span data-t="en">Fluent — thirteen years living and working in France</span><span data-t="fr">Courant —
+              treize ans de vie et de travail en France</span>
           </dd>
-          <dt><span data-t="ro">Rusă</span><span data-t="ru">Русский</span><span data-t="en">Russian</span><span data-t="fr">Russe</span></dt>
-          <dd><span data-t="ro">Foarte bine</span><span data-t="ru">Свободно</span><span data-t="en">Proficient</span><span data-t="fr">Très bon niveau</span></dd>
-          <dt><span data-t="ro">Engleză</span><span data-t="ru">Английский</span><span data-t="en">English</span><span data-t="fr">Anglais</span></dt>
-          <dd><span data-t="ro">Profesional, tehnic</span><span data-t="ru">Профессиональный, технический</span><span data-t="en">Professional, technical</span><span data-t="fr">Professionnel, technique</span></dd>
+          <dt><span data-t="ro">Rusă</span><span data-t="ru">Русский</span><span data-t="en">Russian</span><span
+              data-t="fr">Russe</span></dt>
+          <dd><span data-t="ro">Foarte bine</span><span data-t="ru">Свободно</span><span
+              data-t="en">Proficient</span><span data-t="fr">Très bon niveau</span></dd>
+          <dt><span data-t="ro">Engleză</span><span data-t="ru">Английский</span><span data-t="en">English</span><span
+              data-t="fr">Anglais</span></dt>
+          <dd><span data-t="ro">Profesional, tehnic</span><span data-t="ru">Профессиональный, технический</span><span
+              data-t="en">Professional, technical</span><span data-t="fr">Professionnel, technique</span></dd>
         </dl>
       </div>
     </div>
   </section>
 
   <footer>
-    <span>Mihail Stîngaci — <span data-t="ro">Chișinău</span><span data-t="ru">Кишинёв</span><span data-t="en">Chișinău</span><span data-t="fr">Chișinău</span></span>
+    <span>Mihail Stîngaci — <span data-t="ro">Chișinău</span><span data-t="ru">Кишинёв</span><span
+        data-t="en">Chișinău</span><span data-t="fr">Chișinău</span></span>
     <span>
       <span data-t="ro">Deschis la proiecte backend și full-stack</span>
       <span data-t="ru">Открыт к backend и full-stack проектам</span>
-      <span data-t="en">Open to backend and full-stack work</span><span data-t="fr">Ouvert aux missions backend et full-stack</span>
+      <span data-t="en">Open to backend and full-stack work</span><span data-t="fr">Ouvert aux missions backend et
+        full-stack</span>
     </span>
   </footer>
 
 </div>
 
 <script>
-(function(){
-  var root = document.documentElement;
-  var btns = Array.prototype.slice.call(document.querySelectorAll('.langsw button'));
-  var allowed = ['ro','ru','en','fr'];
+  (function () {
+    var root = document.documentElement;
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.langsw button'));
+    var allowed = ['ro', 'ru', 'en', 'fr'];
 
-  function set(l, store){
-    if (allowed.indexOf(l) < 0) l = 'ro';
-    root.setAttribute('data-l', l);
-    root.lang = l;
-    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
-    if (store) { try { localStorage.setItem('cv-lang', l); } catch (e) {} }
-  }
+    function set(l, store) {
+      if (allowed.indexOf(l) < 0) l = 'ro';
+      root.setAttribute('data-l', l);
+      root.lang = l;
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+      if (store) { try { localStorage.setItem('cv-lang', l); } catch (e) { } }
+    }
 
-  // tema: clara / intunecata, retinuta local
-  var tbtn = document.querySelector('.themebtn');
-  function isDark(){
-    var t = root.getAttribute('data-theme');
-    if (t) return t === 'dark';
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  try {
-    var th = localStorage.getItem('cv-theme');
-    if (th === 'light' || th === 'dark') root.setAttribute('data-theme', th);
-  } catch (e) {}
-  if (tbtn) tbtn.addEventListener('click', function(){
-    var next = isDark() ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('cv-theme', next); } catch (e) {}
-  });
+    // tema: clara / intunecata, retinuta local
+    var tbtn = document.querySelector('.themebtn');
+    function isDark() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t === 'dark';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    try {
+      var th = localStorage.getItem('cv-theme');
+      if (th === 'light' || th === 'dark') root.setAttribute('data-theme', th);
+    } catch (e) { }
+    if (tbtn) tbtn.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('cv-theme', next); } catch (e) { }
+    });
 
-  var saved = null;
-  try { saved = localStorage.getItem('cv-lang'); } catch (e) {}
-  var nav = (navigator.language || 'ro').slice(0,2).toLowerCase();
-  set(saved || (allowed.indexOf(nav) >= 0 ? nav : 'ro'), false);
+    var saved = null;
+    try { saved = localStorage.getItem('cv-lang'); } catch (e) { }
+    var nav = (navigator.language || 'ro').slice(0, 2).toLowerCase();
+    set(saved || (allowed.indexOf(nav) >= 0 ? nav : 'ro'), false);
 
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){ set(b.dataset.l, true); });
-  });
-})();
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { set(b.dataset.l, true); });
+    });
+  })();
 </script>
 </body>
 </html>

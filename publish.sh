@@ -45,6 +45,7 @@ DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunic
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$TITLE</title>
 <meta name="description" content="$DESC">
+<meta name="author" content="Mihail Stîngaci">
 <link rel="canonical" href="https://stmihai84.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Mihail Stîngaci">
@@ -62,11 +63,12 @@ DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunic
 </head>
 <body>
 HEAD
-  grep -v '^<title>' "$SRC/cv-web.html"
+  grep -vE '^<title>|^<meta charset' "$SRC/cv-web.html"
   printf '</body>\n</html>\n'
 } > "$SITE/index.html"
 
 cd "$SITE"
+git pull --rebase --quiet || true   # ia ce a scris GitHub (ex. fisierul CNAME)
 git add -A
 if git diff --cached --quiet; then
   echo "Nimic de publicat."
