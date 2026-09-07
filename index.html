@@ -21,6 +21,7 @@
 <meta name="twitter:image" content="https://stmihai84.github.io/og.png">
 </head>
 <body>
+<meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
   :root{
@@ -69,32 +70,34 @@
   /* ---------- language keys ---------- */
   .langsw{display:flex; justify-content:flex-end; align-items:center; gap:8px; margin-bottom:14px;}
   .themebtn{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:33px; height:33px; padding:0; cursor:pointer;
-    border:1px solid var(--rule); border-radius:2px;
-    background:var(--surface); color:var(--ink-3);
-    transition:color .12s, background .12s;
+    display:inline-flex; align-items:center; gap:8px;
+    padding:9px 15px; cursor:pointer; align-self:stretch;
+    border:0; background:var(--brass-fill); color:var(--brass-ink);
+    font-family:var(--mono); font-size:11.5px; font-weight:500; letter-spacing:1.2px;
+    text-transform:uppercase; white-space:nowrap;
+    transition:filter .12s, background .12s;
   }
-  .themebtn:hover{color:var(--brass-ink); background:var(--surface-2);}
-  .themebtn:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
-  .themebtn svg{width:16px; height:16px;}
+  .themebtn:hover{filter:brightness(1.08);}
+  .themebtn:focus-visible{outline:2px solid var(--brass); outline-offset:-2px;}
+  .themebtn svg{width:19px; height:19px; flex:none;}
   .ico-sun{display:none;}
-  .ico-moon{display:block;}
+  .ico-moon{display:inline-flex; align-items:center;}
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]) .ico-moon{display:none;}
-    :root:not([data-theme="light"]) .ico-sun{display:block;}
+    :root:not([data-theme="light"]) .ico-sun{display:inline-flex; align-items:center;}
   }
   :root[data-theme="dark"] .ico-moon{display:none;}
-  :root[data-theme="dark"] .ico-sun{display:block;}
-  :root[data-theme="light"] .ico-moon{display:block;}
+  :root[data-theme="dark"] .ico-sun{display:inline-flex; align-items:center;}
+  :root[data-theme="light"] .ico-moon{display:inline-flex; align-items:center;}
   :root[data-theme="light"] .ico-sun{display:none;}
-  .langsw .keys{display:flex; border:1px solid var(--rule); border-radius:2px; overflow:hidden; background:var(--surface);}
+  .langsw .keys{display:flex; align-items:stretch; border:1px solid var(--rule);
+                border-radius:3px; overflow:hidden; background:var(--surface);}
   .langsw button{
     font-family:var(--mono); font-size:11.5px; letter-spacing:1.4px; font-weight:500;
-    padding:6px 13px; border:0; border-left:1px solid var(--rule); background:transparent;
+    padding:9px 15px; border:0; border-left:1px solid var(--rule); background:transparent;
     color:var(--ink-3); cursor:pointer; transition:color .12s, background .12s;
   }
-  .langsw button:first-child{border-left:0;}
+  .langsw .keys button:first-of-type{border-left:0;}
   .langsw button:hover{color:var(--ink); background:var(--surface-2);}
   .langsw button[aria-pressed="true"]{background:var(--brass-fill); color:var(--brass-ink);}
   .langsw button:focus-visible{outline:2px solid var(--brass); outline-offset:-2px;}
@@ -287,8 +290,8 @@
 <div class="wrap">
 
   <nav class="langsw" aria-label="Language">
-    <button type="button" class="themebtn" aria-label="Light / dark"><svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path></svg><svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"></path></svg></button>
     <div class="keys">
+      <button type="button" class="themebtn" aria-label="Light / dark"><svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.4v2.4M12 19.2v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.4 12h2.4M19.2 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"></path></svg><svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 1 1 9.4 3.5a6.9 6.9 0 0 0 11.1 11.1z"></path></svg><span class="ico-sun"><span data-t="ro">Deschis</span><span data-t="ru">Светлая</span><span data-t="en">Light</span><span data-t="fr">Clair</span></span><span class="ico-moon"><span data-t="ro">Închis</span><span data-t="ru">Тёмная</span><span data-t="en">Dark</span><span data-t="fr">Sombre</span></span></button>
       <button type="button" data-l="ro" aria-pressed="true">RO</button>
       <button type="button" data-l="ru" aria-pressed="false">RU</button>
       <button type="button" data-l="en" aria-pressed="false">EN</button>
