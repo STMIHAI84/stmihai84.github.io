@@ -33,7 +33,8 @@
   :root:not([data-l]) [data-t="ro"],
   :root[data-l="ro"] [data-t="ro"],
   :root[data-l="ru"] [data-t="ru"],
-  :root[data-l="en"] [data-t="en"]{display:revert;}
+  :root[data-l="en"] [data-t="en"],
+  :root[data-l="fr"] [data-t="fr"]{display:revert;}
 
   *{box-sizing:border-box;}
   body{
@@ -226,6 +227,7 @@
       <button type="button" data-l="ro" aria-pressed="true">RO</button>
       <button type="button" data-l="ru" aria-pressed="false">RU</button>
       <button type="button" data-l="en" aria-pressed="false">EN</button>
+      <button type="button" data-l="fr" aria-pressed="false">FR</button>
     </div>
   </nav>
 
@@ -236,12 +238,12 @@
         <p class="tagline">
           <span data-t="ro">Dezvoltator Backend / Full-Stack — Symfony · Node.js · microservicii event-driven</span>
           <span data-t="ru">Backend / Full-Stack разработчик — Symfony · Node.js · событийные микросервисы</span>
-          <span data-t="en">Backend / Full-Stack Developer — Symfony · Node.js · event-driven microservices</span>
+          <span data-t="en">Backend / Full-Stack Developer — Symfony · Node.js · event-driven microservices</span><span data-t="fr">Développeur Backend / Full-Stack — Symfony · Node.js · microservices événementiels</span>
         </p>
         <p class="pitch">
           <span data-t="ro">Construiesc serviciile din spatele produselor de comunicare în timp real: brokeri de mesaje, straturi de socket-uri, baze de date orientate pe documente și API-urile care le leagă. Cel mai recent, un serviciu de chat de echipă dus de la un repository gol până în producție.</span>
           <span data-t="ru">Строю сервисы, на которых работают продукты реального времени: брокеры сообщений, сокет-слой, документные хранилища и API, которые всё это связывают. Последний из них — сервис командного чата, доведённый от пустого репозитория до продакшена.</span>
-          <span data-t="en">I build the services behind real-time communication products: message brokers, socket layers, document stores and the APIs that tie them together. Most recently, a team-chat service taken from an empty repository to production.</span>
+          <span data-t="en">I build the services behind real-time communication products: message brokers, socket layers, document stores and the APIs that tie them together. Most recently, a team-chat service taken from an empty repository to production.</span><span data-t="fr">Je construis les services qui font tourner les produits de communication en temps réel : brokers de messages, couche socket, bases orientées documents et les API qui relient le tout. Le dernier en date : un service de chat d'équipe mené d'un dépôt vide jusqu'à la production.</span>
         </p>
       </div>
       <div class="patch">
@@ -250,54 +252,55 @@
           <span class="v"><a href="mailto:stmihai84@gmail.com">stmihai84@gmail.com</a></span>
         </div>
         <div class="field">
-          <span class="k"><span data-t="ro">Locație</span><span data-t="ru">Местоположение</span><span data-t="en">Based in</span></span>
-          <span class="v"><span data-t="ro">Chișinău, Moldova</span><span data-t="ru">Кишинёв, Молдова</span><span data-t="en">Chișinău, Moldova</span></span>
+          <span class="k"><span data-t="ro">Locație</span><span data-t="ru">Местоположение</span><span data-t="en">Based in</span><span data-t="fr">Basé à</span></span>
+          <span class="v"><span data-t="ro">Chișinău, Moldova</span><span data-t="ru">Кишинёв, Молдова</span><span data-t="en">Chișinău, Moldova</span><span data-t="fr">Chișinău, Moldavie</span></span>
         </div>
         <div class="field">
-          <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span data-t="en">Working languages</span></span>
+          <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span data-t="en">Working languages</span><span data-t="fr">Langues de travail</span></span>
           <span class="v langs"><b>RO</b><b>FR</b><b>RU</b><b>EN</b></span>
         </div>
         <div class="field">
-          <span class="k"><span data-t="ro">Descarcă CV (PDF)</span><span data-t="ru">Скачать резюме (PDF)</span><span data-t="en">Download CV (PDF)</span></span>
+          <span class="k"><span data-t="ro">Descarcă CV (PDF)</span><span data-t="ru">Скачать резюме (PDF)</span><span data-t="en">Download CV (PDF)</span><span data-t="fr">Télécharger le CV (PDF)</span></span>
           <span class="v dl">
             <a href="https://stmihai84.github.io/cv-ro.pdf" download>RO</a>
             <a href="https://stmihai84.github.io/cv-ru.pdf" download>RU</a>
             <a href="https://stmihai84.github.io/cv-en.pdf" download>EN</a>
+            <a href="https://stmihai84.github.io/cv-fr.pdf" download>FR</a>
           </span>
         </div>
       </div>
     </div>
     <div class="strip">
       <div class="cell">
-        <div class="n"><span data-t="ro">6 ani</span><span data-t="ru">6 лет</span><span data-t="en">6 yrs</span></div>
-        <div class="l"><span data-t="ro">Experiență comercială</span><span data-t="ru">Коммерческий опыт</span><span data-t="en">Commercial</span></div>
+        <div class="n"><span data-t="ro">6 ani</span><span data-t="ru">6 лет</span><span data-t="en">6 yrs</span><span data-t="fr">6 ans</span></div>
+        <div class="l"><span data-t="ro">Experiență comercială</span><span data-t="ru">Коммерческий опыт</span><span data-t="en">Commercial</span><span data-t="fr">En entreprise</span></div>
       </div>
       <div class="cell">
         <div class="n">PHP · JS · TS</div>
-        <div class="l"><span data-t="ro">Limbaje zilnice</span><span data-t="ru">Языки в работе</span><span data-t="en">Daily languages</span></div>
+        <div class="l"><span data-t="ro">Limbaje zilnice</span><span data-t="ru">Языки в работе</span><span data-t="en">Daily languages</span><span data-t="fr">Langages quotidiens</span></div>
       </div>
       <div class="cell">
         <div class="n">6</div>
-        <div class="l"><span data-t="ro">Servicii construite</span><span data-t="ru">Своих сервисов</span><span data-t="en">Services owned</span></div>
+        <div class="l"><span data-t="ro">Servicii construite</span><span data-t="ru">Своих сервисов</span><span data-t="en">Services owned</span><span data-t="fr">Services créés</span></div>
       </div>
       <div class="cell">
         <div class="n">4</div>
-        <div class="l"><span data-t="ro">Limbi vorbite</span><span data-t="ru">Языков</span><span data-t="en">Spoken languages</span></div>
+        <div class="l"><span data-t="ro">Limbi vorbite</span><span data-t="ru">Языков</span><span data-t="en">Spoken languages</span><span data-t="fr">Langues parlées</span></div>
       </div>
     </div>
   </div>
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Ce am construit ultima dată</span><span data-t="ru">Последнее, что я построил</span><span data-t="en">What I built last</span></h2>
+      <h2><span data-t="ro">Ce am construit ultima dată</span><span data-t="ru">Последнее, что я построил</span><span data-t="en">What I built last</span><span data-t="fr">Ce que j'ai construit en dernier</span></h2>
       <span class="line"></span>
-      <span class="meta"><span data-t="ro">Serviciul de chat Vylo</span><span data-t="ru">Чат-сервис Vylo</span><span data-t="en">Vylo chat service</span></span>
+      <span class="meta"><span data-t="ro">Serviciul de chat Vylo</span><span data-t="ru">Чат-сервис Vylo</span><span data-t="en">Vylo chat service</span><span data-t="fr">Service de chat Vylo</span></span>
     </div>
     <div class="diagram">
       <div class="cap">
         <span data-t="ro">Traseul unui mesaj — de la cererea HTTP la clientul conectat</span>
         <span data-t="ru">Путь сообщения — от HTTP-запроса до подключённого клиента</span>
-        <span data-t="en">Message path — from HTTP request to connected client</span>
+        <span data-t="en">Message path — from HTTP request to connected client</span><span data-t="fr">Trajet d'un message — de la requête HTTP au client connecté</span>
       </div>
       <svg viewBox="0 0 700 196" role="img" aria-label="Symfony API → RabbitMQ → Node.js Socket.IO → clients; MongoDB and Elasticsearch back the API, Redis backs the socket layer.">
         <defs>
@@ -323,18 +326,18 @@
         <text x="268" y="60" text-anchor="middle" class="t-brass" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600">RabbitMQ</text>
         <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ro">broker</text>
         <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ru">брокер</text>
-        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">broker</text>
+        <text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">broker</text><text x="268" y="76" text-anchor="middle" class="t-brass" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">broker</text>
 
         <rect x="364" y="38" width="152" height="50" rx="2" class="n-box" stroke-width="1.2"></rect>
         <text x="440" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600">Node · Socket.IO</text>
         <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ro">server real-time</text>
         <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="ru">реальное время</text>
-        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">real-time server</text>
+        <text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="en">real-time server</text><text x="440" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5" data-t="fr">serveur temps réel</text>
 
         <rect x="556" y="38" width="130" height="50" rx="2" class="n-box plain" stroke-width="1.2"></rect>
         <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="ro">Clienți</text>
         <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="ru">Клиенты</text>
-        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="en">Clients</text>
+        <text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="en">Clients</text><text x="621" y="60" text-anchor="middle" class="t-ink" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="600" data-t="fr">Clients</text>
         <text x="621" y="76" text-anchor="middle" class="t-mut" font-family="IBM Plex Mono, monospace" font-size="10.5">web · desktop</text>
 
         <g font-family="IBM Plex Mono, monospace" font-size="11">
@@ -349,13 +352,13 @@
         <g font-family="IBM Plex Mono, monospace" font-size="10" class="t-mut">
           <text x="60" y="178" text-anchor="middle" data-t="ro">documente</text>
           <text x="60" y="178" text-anchor="middle" data-t="ru">документы</text>
-          <text x="60" y="178" text-anchor="middle" data-t="en">documents</text>
+          <text x="60" y="178" text-anchor="middle" data-t="en">documents</text><text x="60" y="178" text-anchor="middle" data-t="fr">documents</text>
           <text x="196" y="178" text-anchor="middle" data-t="ro">index de căutare</text>
           <text x="196" y="178" text-anchor="middle" data-t="ru">поисковый индекс</text>
-          <text x="196" y="178" text-anchor="middle" data-t="en">search index</text>
+          <text x="196" y="178" text-anchor="middle" data-t="en">search index</text><text x="196" y="178" text-anchor="middle" data-t="fr">index de recherche</text>
           <text x="440" y="178" text-anchor="middle" data-t="ro">adaptor de socket-uri</text>
           <text x="440" y="178" text-anchor="middle" data-t="ru">адаптер сокетов</text>
-          <text x="440" y="178" text-anchor="middle" data-t="en">socket adapter</text>
+          <text x="440" y="178" text-anchor="middle" data-t="en">socket adapter</text><text x="440" y="178" text-anchor="middle" data-t="fr">adaptateur de sockets</text>
         </g>
       </svg>
     </div>
@@ -363,9 +366,9 @@
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Traseu</span><span data-t="ru">Путь</span><span data-t="en">Track</span></h2>
+      <h2><span data-t="ro">Traseu</span><span data-t="ru">Путь</span><span data-t="en">Track</span><span data-t="fr">Parcours</span></h2>
       <span class="line"></span>
-      <span class="meta"><span data-t="ro">2006 → azi</span><span data-t="ru">2006 → сегодня</span><span data-t="en">2006 → today</span></span>
+      <span class="meta"><span data-t="ro">2006 → azi</span><span data-t="ru">2006 → сегодня</span><span data-t="en">2006 → today</span><span data-t="fr">2006 → aujourd'hui</span></span>
     </div>
 
     <div class="track">
@@ -374,13 +377,13 @@
         <div class="when">
           <span data-t="ro">2024 —<br>prezent</span>
           <span data-t="ru">2024 —<br>сейчас</span>
-          <span data-t="en">2024 —<br>present</span>
+          <span data-t="en">2024 —<br>present</span><span data-t="fr">2024 —<br>aujourd'hui</span>
         </div>
         <div>
           <p class="role">
             <span data-t="ro">Dezvoltator Backend / Full-Stack</span>
             <span data-t="ru">Backend / Full-Stack разработчик</span>
-            <span data-t="en">Backend / Full-Stack Developer</span>
+            <span data-t="en">Backend / Full-Stack Developer</span><span data-t="fr">Développeur Backend / Full-Stack</span>
             <span class="org">· NIXAP Development SRL</span>
           </p>
 
@@ -390,44 +393,44 @@
               <span class="proj-when">
                 <span data-t="ro">Dec 2025 — prezent</span>
                 <span data-t="ru">Дек 2025 — сейчас</span>
-                <span data-t="en">Dec 2025 — present</span>
+                <span data-t="en">Dec 2025 — present</span><span data-t="fr">Déc. 2025 — aujourd'hui</span>
               </span>
             </div>
             <p class="what">
               <span data-t="ro">Platformă de comunicații de business: VoIP, SMS, chat de echipă, videoconferință, CRM pentru call-center.</span>
               <span data-t="ru">Платформа бизнес-коммуникаций: VoIP, SMS, командный чат, видеоконференции, CRM для колл-центра.</span>
-              <span data-t="en">Business-communications platform: VoIP, SMS, team chat, video conferencing, call-centre CRM.</span>
+              <span data-t="en">Business-communications platform: VoIP, SMS, team chat, video conferencing, call-centre CRM.</span><span data-t="fr">Plateforme de communication d'entreprise : VoIP, SMS, chat d'équipe, visioconférence, CRM de centre d'appels.</span>
             </p>
             <ul>
               <li>
                 <span data-t="ro"><b>Am construit serviciul de chat de la un repository gol</b> — Symfony 7.4 și API Platform peste MongoDB, cu căutare full-text în Elasticsearch și atașamente pe stocare compatibilă S3, servite printr-o rută care verifică apartenența la cameră.</span>
                 <span data-t="ru"><b>Построил чат-сервис с нуля</b> — Symfony 7.4 и API Platform поверх MongoDB, полнотекстовый поиск в Elasticsearch и вложения в S3-совместимом хранилище, отдаваемые через маршрут, который проверяет членство в комнате.</span>
-                <span data-t="en"><b>Built the chat service from an empty repository</b> — Symfony 7.4 and API Platform over MongoDB, with Elasticsearch full-text search and S3-compatible attachments served behind a route that enforces room membership.</span>
+                <span data-t="en"><b>Built the chat service from an empty repository</b> — Symfony 7.4 and API Platform over MongoDB, with Elasticsearch full-text search and S3-compatible attachments served behind a route that enforces room membership.</span><span data-t="fr"><b>J'ai construit le service de chat à partir d'un dépôt vide</b> — Symfony 7.4 et API Platform sur MongoDB, avec recherche plein texte Elasticsearch et pièces jointes sur stockage compatible S3, servies par une route qui vérifie l'appartenance au salon.</span>
               </li>
               <li>
                 <span data-t="ro"><b>Am proiectat pipeline-ul de evenimente din spate</b> — Symfony publică în RabbitMQ, un server Node.js cu Socket.IO consumă și difuzează, iar Redis scalează socket-urile pe mai multe instanțe.</span>
                 <span data-t="ru"><b>Спроектировал событийный конвейер за ним</b> — Symfony публикует в RabbitMQ, сервер на Node.js и Socket.IO читает и рассылает, Redis масштабирует сокеты между инстансами.</span>
-                <span data-t="en"><b>Designed the event pipeline behind it</b> — Symfony publishes to RabbitMQ, a Node.js and Socket.IO server consumes and broadcasts, Redis scales the sockets across instances.</span>
+                <span data-t="en"><b>Designed the event pipeline behind it</b> — Symfony publishes to RabbitMQ, a Node.js and Socket.IO server consumes and broadcasts, Redis scales the sockets across instances.</span><span data-t="fr"><b>J'ai conçu le pipeline d'événements derrière</b> — Symfony publie dans RabbitMQ, un serveur Node.js et Socket.IO consomme et diffuse, Redis répartit les sockets entre les instances.</span>
               </li>
               <li>
                 <span data-t="ro"><b>Serviciu de management al sarcinilor</b>, cu un model de permisiuni deny-by-default construit pe voters Symfony.</span>
                 <span data-t="ru"><b>Сервис управления задачами</b> с моделью прав deny-by-default на воутерах Symfony.</span>
-                <span data-t="en"><b>Task-management service</b> with a deny-by-default permission model built on Symfony voters.</span>
+                <span data-t="en"><b>Task-management service</b> with a deny-by-default permission model built on Symfony voters.</span><span data-t="fr"><b>Service de gestion des tâches</b> avec un modèle de permissions deny-by-default bâti sur les voters Symfony.</span>
               </li>
               <li>
                 <span data-t="ro"><b>Serviciu de contacte</b> extras din API-ul monolitic, delimitat prin identificatori în loc de chei străine între servicii.</span>
                 <span data-t="ru"><b>Сервис контактов</b>, выделенный из монолитного API, с границами по идентификаторам вместо межсервисных внешних ключей.</span>
-                <span data-t="en"><b>Contacts service</b> extracted from the monolithic API, bounded by identifiers rather than cross-service foreign keys.</span>
+                <span data-t="en"><b>Contacts service</b> extracted from the monolithic API, bounded by identifiers rather than cross-service foreign keys.</span><span data-t="fr"><b>Service de contacts</b> extrait de l'API monolithique, délimité par identifiants plutôt que par clés étrangères entre services.</span>
               </li>
               <li>
                 <span data-t="ro"><b>Serviciu de agenți vocali</b> în TypeScript, care creează agenți AI pe ElevenLabs și Deepgram, scriind întâi la furnizor, ca înregistrările locale să nu divergă.</span>
                 <span data-t="ru"><b>Сервис голосовых агентов</b> на TypeScript: создаёт AI-агентов в ElevenLabs и Deepgram, записывая сначала у провайдера, чтобы локальные записи не расходились.</span>
-                <span data-t="en"><b>Voice-agents service</b> in TypeScript that provisions AI agents on ElevenLabs and Deepgram, writing to the provider first so local records never drift.</span>
+                <span data-t="en"><b>Voice-agents service</b> in TypeScript that provisions AI agents on ElevenLabs and Deepgram, writing to the provider first so local records never drift.</span><span data-t="fr"><b>Service d'agents vocaux</b> en TypeScript, qui crée des agents IA sur ElevenLabs et Deepgram en écrivant d'abord chez le fournisseur, pour que les enregistrements locaux ne divergent jamais.</span>
               </li>
               <li>
                 <span data-t="ro">Plus notificări, abonamente Stripe și integrări telecom în API-ul central, un serviciu de geolocalizare pe PostGIS și clientul desktop Electron.</span>
                 <span data-t="ru">Плюс уведомления, подписки Stripe и телеком-интеграции в основном API, геолокационный сервис на PostGIS и десктоп-клиент на Electron.</span>
-                <span data-t="en">Plus notifications, Stripe subscriptions and telecom integrations in the core API, a PostGIS geolocation service, and the Electron desktop client.</span>
+                <span data-t="en">Plus notifications, Stripe subscriptions and telecom integrations in the core API, a PostGIS geolocation service, and the Electron desktop client.</span><span data-t="fr">Plus les notifications, les abonnements Stripe et les intégrations télécom dans l'API centrale, un service de géolocalisation PostGIS et le client bureau Electron.</span>
               </li>
             </ul>
             <div class="chips"><span>Symfony 7.4</span><span>PHP 8.4</span><span>MongoDB</span><span>RabbitMQ</span><span>Socket.IO</span><span>Elasticsearch</span><span>Redis</span><span>TypeScript</span><span>Docker</span></div>
@@ -438,30 +441,30 @@
               <span class="proj-name">
                 <span data-t="ro">Platformă de ride-hailing</span>
                 <span data-t="ru">Платформа заказа поездок</span>
-                <span data-t="en">Ride-hailing platform</span>
+                <span data-t="en">Ride-hailing platform</span><span data-t="fr">Plateforme de VTC</span>
               </span>
               <span class="proj-when">2024 — 2025</span>
             </div>
             <p class="what">
               <span data-t="ro">Aplicație pentru piața din România.</span>
               <span data-t="ru">Приложение для румынского рынка.</span>
-              <span data-t="en">Application for the Romanian market.</span>
+              <span data-t="en">Application for the Romanian market.</span><span data-t="fr">Application pour le marché roumain.</span>
             </p>
             <ul>
               <li>
                 <span data-t="ro">Structuri de bază de date și migrări pentru o schemă de producție în schimbare continuă.</span>
                 <span data-t="ru">Структуры БД и миграции для постоянно меняющейся продакшен-схемы.</span>
-                <span data-t="en">Database structures and migrations for a production schema under constant change.</span>
+                <span data-t="en">Database structures and migrations for a production schema under constant change.</span><span data-t="fr">Structures de base de données et migrations pour un schéma de production en évolution constante.</span>
               </li>
               <li>
                 <span data-t="ro">Blocare șofer–pasager, mesagerie în aplicație, actualizări în timp real, interfață multilingvă.</span>
                 <span data-t="ru">Блокировка водитель–пассажир, чат в приложении, обновления в реальном времени, многоязычный интерфейс.</span>
-                <span data-t="en">Driver–passenger blocking, in-app messaging, real-time updates, multilingual interface.</span>
+                <span data-t="en">Driver–passenger blocking, in-app messaging, real-time updates, multilingual interface.</span><span data-t="fr">Blocage chauffeur–passager, messagerie intégrée, mises à jour en temps réel, interface multilingue.</span>
               </li>
               <li>
                 <span data-t="ro">Componente Vue.js pentru vizualizarea datelor în aplicație.</span>
                 <span data-t="ru">Собственные Vue.js-компоненты для визуализации данных.</span>
-                <span data-t="en">Custom Vue.js components for in-app data visualisation.</span>
+                <span data-t="en">Custom Vue.js components for in-app data visualisation.</span><span data-t="fr">Composants Vue.js sur mesure pour la visualisation des données dans l'application.</span>
               </li>
             </ul>
             <div class="chips"><span>Symfony</span><span>Laravel</span><span>Vue.js</span><span>MySQL</span><span>Redis</span></div>
@@ -473,19 +476,19 @@
         <div class="when">2022 — 2024</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator PHP / Full-Stack</span><span data-t="ru">PHP / Full-Stack разработчик</span><span data-t="en">PHP / Full-Stack Developer</span>
+            <span data-t="ro">Dezvoltator PHP / Full-Stack</span><span data-t="ru">PHP / Full-Stack разработчик</span><span data-t="en">PHP / Full-Stack Developer</span><span data-t="fr">Développeur PHP / Full-Stack</span>
             <span class="org">· ServiciiComplete</span>
           </p>
           <ul>
             <li>
               <span data-t="ro">Fluxuri de înregistrare și cont; date de comenzi, tranzacții și livrări în MySQL.</span>
               <span data-t="ru">Регистрация и аккаунты; данные заказов, транзакций и доставок в MySQL.</span>
-              <span data-t="en">Registration and account flows; order, transaction and delivery data in MySQL.</span>
+              <span data-t="en">Registration and account flows; order, transaction and delivery data in MySQL.</span><span data-t="fr">Parcours d'inscription et de compte ; données de commandes, transactions et livraisons dans MySQL.</span>
             </li>
             <li>
               <span data-t="ro">Am condus un proiect WordPress la comandă, de la cerințele clientului până la lansare.</span>
               <span data-t="ru">Вёл заказной проект на WordPress от требований клиента до запуска.</span>
-              <span data-t="en">Led a bespoke WordPress build from client requirements through to launch.</span>
+              <span data-t="en">Led a bespoke WordPress build from client requirements through to launch.</span><span data-t="fr">J'ai piloté un projet WordPress sur mesure, du cahier des charges client jusqu'à la mise en ligne.</span>
             </li>
           </ul>
           <div class="chips"><span>PHP</span><span>JavaScript</span><span>MySQL</span><span>WordPress</span></div>
@@ -496,14 +499,14 @@
         <div class="when">2020 — 2022</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator PHP</span><span data-t="ru">PHP-разработчик</span><span data-t="en">PHP Developer</span>
+            <span data-t="ro">Dezvoltator PHP</span><span data-t="ru">PHP-разработчик</span><span data-t="en">PHP Developer</span><span data-t="fr">Développeur PHP</span>
             <span class="org">· TribePayments</span>
           </p>
           <ul>
             <li>
               <span data-t="ro">Sisteme de procesare a plăților și integrări cu gateway-uri terțe — un domeniu în care o eroare de rotunjire e un incident.</span>
               <span data-t="ru">Системы обработки платежей и интеграции со сторонними шлюзами — область, где ошибка округления это инцидент.</span>
-              <span data-t="en">Payment-processing systems and third-party gateway integrations — a domain where a rounding error is an incident.</span>
+              <span data-t="en">Payment-processing systems and third-party gateway integrations — a domain where a rounding error is an incident.</span><span data-t="fr">Systèmes de traitement des paiements et intégrations de passerelles tierces — un domaine où une erreur d'arrondi est un incident.</span>
             </li>
           </ul>
           <div class="chips"><span>PHP</span><span>JavaScript</span><span>Payment gateways</span></div>
@@ -514,19 +517,19 @@
         <div class="when">2019 — 2020</div>
         <div>
           <p class="role">
-            <span data-t="ro">Dezvoltator Symfony</span><span data-t="ru">Symfony-разработчик</span><span data-t="en">Symfony Developer</span>
-            <span class="org">· Generation Internet, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span></span>
+            <span data-t="ro">Dezvoltator Symfony</span><span data-t="ru">Symfony-разработчик</span><span data-t="en">Symfony Developer</span><span data-t="fr">Développeur Symfony</span>
+            <span class="org">· Generation Internet, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></span>
           </p>
           <ul>
             <li>
               <span data-t="ro">Aplicație de pontaj pentru proiectele clienților: clienții cumpărau ore de dezvoltare, iar programatorii înregistrau consumul din ele.</span>
               <span data-t="ru">Приложение учёта времени по проектам клиентов: клиенты покупали часы разработки, разработчики списывали их.</span>
-              <span data-t="en">Time-tracking application for client projects: clients purchased development hours, developers logged usage against them.</span>
+              <span data-t="en">Time-tracking application for client projects: clients purchased development hours, developers logged usage against them.</span><span data-t="fr">Application de suivi du temps pour les projets clients : les clients achetaient des heures de développement, les développeurs y imputaient leur travail.</span>
             </li>
             <li>
               <span data-t="ro">Anterior, proiecte pentru OK Flora — site-uri administrative interne, gestiune de utilizatori și tranzacții.</span>
               <span data-t="ru">Ранее — проекты для OK Flora: внутренние административные сайты, управление пользователями и транзакциями.</span>
-              <span data-t="en">Earlier project work for OK Flora — internal administrative sites, user and transaction management.</span>
+              <span data-t="en">Earlier project work for OK Flora — internal administrative sites, user and transaction management.</span><span data-t="fr">Auparavant, projets pour OK Flora — sites d'administration internes, gestion des utilisateurs et des transactions.</span>
             </li>
           </ul>
           <div class="chips"><span>Symfony</span><span>Sonata Admin</span><span>MySQL</span></div>
@@ -539,12 +542,12 @@
           <p class="role">
             <span data-t="ro">Franța — industria hotelieră</span>
             <span data-t="ru">Франция — гостиничная сфера</span>
-            <span data-t="en">France — hospitality</span>
+            <span data-t="en">France — hospitality</span><span data-t="fr">France — hôtellerie</span>
           </p>
           <p>
             <span data-t="ro">Treisprezece ani de muncă cu normă întreagă în hoteluri din Franța, economisind ca să îmi finanțez întoarcerea în dezvoltarea software. M-am recalificat în 2019 printr-un program intensiv finanțat de stat și am revenit în domeniu ca programator. De acolo vine și franceza.</span>
             <span data-t="ru">Тринадцать лет полной занятости в отелях во Франции — копил, чтобы оплатить возвращение в разработку. В 2019 прошёл интенсивную переподготовку по государственной программе и вернулся в профессию разработчиком. Оттуда же и французский.</span>
-            <span data-t="en">Thirteen years working full-time in hotels in France, saving to finance a return to software development. Retrained in 2019 through an intensive state-funded programme and re-entered the field as a developer. It is also where the French comes from.</span>
+            <span data-t="en">Thirteen years working full-time in hotels in France, saving to finance a return to software development. Retrained in 2019 through an intensive state-funded programme and re-entered the field as a developer. It is also where the French comes from.</span><span data-t="fr">Treize ans à temps plein dans l'hôtellerie en France, à épargner pour financer un retour au développement logiciel. Reconversion en 2019 via une formation intensive financée par l'État, puis retour dans le métier comme développeur. C'est aussi de là que vient le français.</span>
           </p>
         </div>
       </article>
@@ -554,41 +557,41 @@
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Tehnologii</span><span data-t="ru">Стек</span><span data-t="en">Stack</span></h2>
+      <h2><span data-t="ro">Tehnologii</span><span data-t="ru">Стек</span><span data-t="en">Stack</span><span data-t="fr">Technologies</span></h2>
       <span class="line"></span>
       <span class="meta">
         <span data-t="ro">evidențiate = folosite anul acesta</span>
         <span data-t="ru">выделены = в работе в этом году</span>
-        <span data-t="en">highlighted = used this year</span>
+        <span data-t="en">highlighted = used this year</span><span data-t="fr">en surbrillance = utilisé cette année</span>
       </span>
     </div>
     <dl class="stack">
       <div class="srow">
-        <dt><span data-t="ro">Limbaje</span><span data-t="ru">Языки</span><span data-t="en">Languages</span></dt>
+        <dt><span data-t="ro">Limbaje</span><span data-t="ru">Языки</span><span data-t="en">Languages</span><span data-t="fr">Langages</span></dt>
         <dd><i class="key">PHP 8.4</i><i class="key">TypeScript</i><i class="key">JavaScript</i><i>SQL</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Backend</span><span data-t="ru">Бэкенд</span><span data-t="en">Backend</span></dt>
+        <dt><span data-t="ro">Backend</span><span data-t="ru">Бэкенд</span><span data-t="en">Backend</span><span data-t="fr">Backend</span></dt>
         <dd><i class="key">Symfony 7 / 8</i><i class="key">API Platform</i><i>Laravel</i><i class="key">Node.js</i><i>Express</i><i>REST</i><i class="key">Microservices</i><i>JWT</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Date și căutare</span><span data-t="ru">Данные и поиск</span><span data-t="en">Data &amp; search</span></dt>
+        <dt><span data-t="ro">Date și căutare</span><span data-t="ru">Данные и поиск</span><span data-t="en">Data &amp; search</span><span data-t="fr">Données et recherche</span></dt>
         <dd><i class="key">MongoDB</i><i>MySQL / MariaDB</i><i>PostgreSQL + PostGIS</i><i class="key">Elasticsearch</i><i class="key">Redis</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Mesagerie</span><span data-t="ru">Обмен сообщениями</span><span data-t="en">Messaging</span></dt>
+        <dt><span data-t="ro">Mesagerie</span><span data-t="ru">Обмен сообщениями</span><span data-t="en">Messaging</span><span data-t="fr">Messagerie</span></dt>
         <dd><i class="key">RabbitMQ</i><i class="key">Socket.IO</i><i>WebSockets</i><i class="key">Event-driven</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Frontend</span><span data-t="ru">Фронтенд</span><span data-t="en">Frontend</span></dt>
+        <dt><span data-t="ro">Frontend</span><span data-t="ru">Фронтенд</span><span data-t="en">Frontend</span><span data-t="fr">Frontend</span></dt>
         <dd><i>Vue.js</i><i>React</i><i>Electron</i><i>CSS</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Infrastructură</span><span data-t="ru">Инфраструктура</span><span data-t="en">Infrastructure</span></dt>
+        <dt><span data-t="ro">Infrastructură</span><span data-t="ru">Инфраструктура</span><span data-t="en">Infrastructure</span><span data-t="fr">Infrastructure</span></dt>
         <dd><i class="key">Docker</i><i>Git</i><i>MinIO / S3</i></dd>
       </div>
       <div class="srow">
-        <dt><span data-t="ro">Integrări</span><span data-t="ru">Интеграции</span><span data-t="en">Integrations</span></dt>
+        <dt><span data-t="ro">Integrări</span><span data-t="ru">Интеграции</span><span data-t="en">Integrations</span><span data-t="fr">Intégrations</span></dt>
         <dd><i>Stripe</i><i class="key">ElevenLabs</i><i class="key">Deepgram</i><i>OpenAI</i><i>SIP / WebRTC</i><i>Jitsi</i></dd>
       </div>
     </dl>
@@ -596,60 +599,60 @@
 
   <section>
     <div class="shead">
-      <h2><span data-t="ro">Formare</span><span data-t="ru">Образование</span><span data-t="en">Background</span></h2>
+      <h2><span data-t="ro">Formare</span><span data-t="ru">Образование</span><span data-t="en">Background</span><span data-t="fr">Formation</span></h2>
       <span class="line"></span>
     </div>
     <div class="cols">
       <div>
         <div class="item">
           <span class="d">2022</span>
-          <div class="t">Cefim, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span></div>
-          <div class="n"><span data-t="ro">Dezvoltare web.</span><span data-t="ru">Веб-разработка.</span><span data-t="en">Web development.</span></div>
+          <div class="t">Cefim, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></div>
+          <div class="n"><span data-t="ro">Dezvoltare web.</span><span data-t="ru">Веб-разработка.</span><span data-t="en">Web development.</span><span data-t="fr">Développement web.</span></div>
         </div>
         <div class="item">
           <span class="d">2019 — 2020</span>
-          <div class="t">EnyEcolinformatique, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span></div>
+          <div class="t">EnyEcolinformatique, <span data-t="ro">Franța</span><span data-t="ru">Франция</span><span data-t="en">France</span><span data-t="fr">France</span></div>
           <div class="n">
             <span data-t="ro">Dezvoltare web și mobile web — POO, algoritmi, ingineria programării. Program intensiv de recalificare finanțat de stat.</span>
             <span data-t="ru">Веб- и мобильная веб-разработка — ООП, алгоритмы, программная инженерия. Интенсивная переподготовка по государственной программе.</span>
-            <span data-t="en">Web and mobile web development — OOP, algorithms, software engineering. Intensive state-funded retraining programme.</span>
+            <span data-t="en">Web and mobile web development — OOP, algorithms, software engineering. Intensive state-funded retraining programme.</span><span data-t="fr">Développement web et mobile — POO, algorithmes, génie logiciel. Formation intensive de reconversion financée par l'État.</span>
           </div>
         </div>
         <div class="item">
           <span class="d">2002 — 2006</span>
-          <div class="t"><span data-t="ro">Universitatea Tehnică a Moldovei</span><span data-t="ru">Технический университет Молдовы</span><span data-t="en">Technical University of Moldova</span></div>
+          <div class="t"><span data-t="ro">Universitatea Tehnică a Moldovei</span><span data-t="ru">Технический университет Молдовы</span><span data-t="en">Technical University of Moldova</span><span data-t="fr">Université technique de Moldavie</span></div>
           <div class="n">
             <span data-t="ro">Facultatea de Informatică și Limbi Străine.</span>
             <span data-t="ru">Факультет информатики и иностранных языков.</span>
-            <span data-t="en">Faculty of Informatics and Foreign Languages.</span>
+            <span data-t="en">Faculty of Informatics and Foreign Languages.</span><span data-t="fr">Faculté d'informatique et de langues étrangères.</span>
           </div>
         </div>
       </div>
       <div>
         <dl class="lang-row">
-          <dt><span data-t="ro">Română</span><span data-t="ru">Румынский</span><span data-t="en">Romanian</span></dt>
-          <dd><span data-t="ro">Nativ</span><span data-t="ru">Родной</span><span data-t="en">Native</span></dd>
-          <dt><span data-t="ro">Franceză</span><span data-t="ru">Французский</span><span data-t="en">French</span></dt>
+          <dt><span data-t="ro">Română</span><span data-t="ru">Румынский</span><span data-t="en">Romanian</span><span data-t="fr">Roumain</span></dt>
+          <dd><span data-t="ro">Nativ</span><span data-t="ru">Родной</span><span data-t="en">Native</span><span data-t="fr">Langue maternelle</span></dd>
+          <dt><span data-t="ro">Franceză</span><span data-t="ru">Французский</span><span data-t="en">French</span><span data-t="fr">Français</span></dt>
           <dd>
             <span data-t="ro">Fluent — treisprezece ani trăiți și lucrați în Franța</span>
             <span data-t="ru">Свободно — тринадцать лет жизни и работы во Франции</span>
-            <span data-t="en">Fluent — thirteen years living and working in France</span>
+            <span data-t="en">Fluent — thirteen years living and working in France</span><span data-t="fr">Courant — treize ans de vie et de travail en France</span>
           </dd>
-          <dt><span data-t="ro">Rusă</span><span data-t="ru">Русский</span><span data-t="en">Russian</span></dt>
-          <dd><span data-t="ro">Foarte bine</span><span data-t="ru">Свободно</span><span data-t="en">Proficient</span></dd>
-          <dt><span data-t="ro">Engleză</span><span data-t="ru">Английский</span><span data-t="en">English</span></dt>
-          <dd><span data-t="ro">Profesional, tehnic</span><span data-t="ru">Профессиональный, технический</span><span data-t="en">Professional, technical</span></dd>
+          <dt><span data-t="ro">Rusă</span><span data-t="ru">Русский</span><span data-t="en">Russian</span><span data-t="fr">Russe</span></dt>
+          <dd><span data-t="ro">Foarte bine</span><span data-t="ru">Свободно</span><span data-t="en">Proficient</span><span data-t="fr">Très bon niveau</span></dd>
+          <dt><span data-t="ro">Engleză</span><span data-t="ru">Английский</span><span data-t="en">English</span><span data-t="fr">Anglais</span></dt>
+          <dd><span data-t="ro">Profesional, tehnic</span><span data-t="ru">Профессиональный, технический</span><span data-t="en">Professional, technical</span><span data-t="fr">Professionnel, technique</span></dd>
         </dl>
       </div>
     </div>
   </section>
 
   <footer>
-    <span>Mihail Stîngaci — <span data-t="ro">Chișinău</span><span data-t="ru">Кишинёв</span><span data-t="en">Chișinău</span></span>
+    <span>Mihail Stîngaci — <span data-t="ro">Chișinău</span><span data-t="ru">Кишинёв</span><span data-t="en">Chișinău</span><span data-t="fr">Chișinău</span></span>
     <span>
       <span data-t="ro">Deschis la proiecte backend și full-stack</span>
       <span data-t="ru">Открыт к backend и full-stack проектам</span>
-      <span data-t="en">Open to backend and full-stack work</span>
+      <span data-t="en">Open to backend and full-stack work</span><span data-t="fr">Ouvert aux missions backend et full-stack</span>
     </span>
   </footer>
 
@@ -659,7 +662,7 @@
 (function(){
   var root = document.documentElement;
   var btns = Array.prototype.slice.call(document.querySelectorAll('.langsw button'));
-  var allowed = ['ro','ru','en'];
+  var allowed = ['ro','ru','en','fr'];
 
   function set(l, store){
     if (allowed.indexOf(l) < 0) l = 'ro';

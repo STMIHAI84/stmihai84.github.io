@@ -10,12 +10,14 @@ SITE="$HOME/cv-site"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
+cd "$SRC" && python3 translate_cv.py >/dev/null && python3 translate_cv_fr.py >/dev/null
+
 pdf () {  # pdf <fisier.html> <iesire.pdf>
   google-chrome --headless=new --disable-gpu --no-pdf-header-footer \
     --print-to-pdf="$2" "file://$1" >/dev/null 2>&1
 }
 
-for pair in ":en" "_RO:ro" "_RU:ru"; do
+for pair in ":en" "_RO:ro" "_RU:ru" "_FR:fr"; do
   suf="${pair%%:*}"; lang="${pair##*:}"
   html="$SRC/Mihail_Stingaci_CV_2026${suf}.html"
 
