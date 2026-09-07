@@ -84,6 +84,15 @@
   .field a:hover{color:var(--brass-ink); border-bottom-color:var(--brass);}
   .field a:focus-visible{outline:2px solid var(--brass); outline-offset:3px; border-radius:2px;}
 
+  .dl{display:flex; flex-wrap:wrap; gap:5px;}
+  .dl a{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.6px; font-weight:500;
+    text-decoration:none; padding:4px 10px; border-radius:2px;
+    border:1px solid var(--brass-edge); background:var(--brass-fill); color:var(--brass-ink);
+    transition:background .12s, border-color .12s;
+  }
+  .dl a:hover{background:var(--surface); border-color:var(--brass);}
+  .dl a:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
   .langs{display:flex; flex-wrap:wrap; gap:5px;}
   .langs b{
     font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.6px;
@@ -247,6 +256,14 @@
         <div class="field">
           <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span data-t="en">Working languages</span></span>
           <span class="v langs"><b>RO</b><b>FR</b><b>RU</b><b>EN</b></span>
+        </div>
+        <div class="field">
+          <span class="k"><span data-t="ro">Descarcă CV (PDF)</span><span data-t="ru">Скачать резюме (PDF)</span><span data-t="en">Download CV (PDF)</span></span>
+          <span class="v dl">
+            <a href="https://stmihai84.github.io/cv-ro.pdf" download>RO</a>
+            <a href="https://stmihai84.github.io/cv-ru.pdf" download>RU</a>
+            <a href="https://stmihai84.github.io/cv-en.pdf" download>EN</a>
+          </span>
         </div>
       </div>
     </div>
