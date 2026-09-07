@@ -33,7 +33,38 @@ for pair in ":en" "_RO:ro" "_RU:ru" "_FR:fr"; do
   pdf "$TMP/$lang.html" "$SITE/cv-$lang.pdf"
 done
 
-cp "$SRC/cv-web.html" "$SITE/index.html"
+# index.html = document complet (head cu Open Graph) + continutul paginii
+TITLE="Mihail Stîngaci — Backend / Full-Stack Developer"
+DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunicare in timp real. CV in romana, rusa, engleza si franceza."
+{
+  cat <<HEAD
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$TITLE</title>
+<meta name="description" content="$DESC">
+<link rel="canonical" href="https://stmihai84.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Mihail Stîngaci">
+<meta property="og:title" content="$TITLE">
+<meta property="og:description" content="$DESC">
+<meta property="og:url" content="https://stmihai84.github.io/">
+<meta property="og:image" content="https://stmihai84.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="$TITLE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="$TITLE">
+<meta name="twitter:description" content="$DESC">
+<meta name="twitter:image" content="https://stmihai84.github.io/og.png">
+</head>
+<body>
+HEAD
+  grep -v '^<title>' "$SRC/cv-web.html"
+  printf '</body>\n</html>\n'
+} > "$SITE/index.html"
 
 cd "$SITE"
 git add -A
