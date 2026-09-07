@@ -5,7 +5,7 @@
     --bg:#F2F4F7; --surface:#FFFFFF; --surface-2:#FAFBFC;
     --ink:#131922; --ink-2:#4A5563; --ink-3:#79838F;
     --rule:#D8DEE6; --rule-soft:#E7EBF0;
-    --brass:#8F6310; --brass-ink:#8F6310; --brass-fill:#F4EAD3; --brass-edge:#E2D2AE;
+    --brass:#8F6310; --brass-ink:#8F6310; --brass-fill:#F4EAD3; --brass-edge:#E2D2AE; --on-brass:#FFFFFF;
     --shadow:0 1px 2px rgba(19,25,34,.05), 0 8px 24px -14px rgba(19,25,34,.22);
     --sans:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
     --display:"Archivo", "IBM Plex Sans", system-ui, sans-serif;
@@ -16,7 +16,7 @@
       --bg:#0E131A; --surface:#151C25; --surface-2:#111821;
       --ink:#E9EDF3; --ink-2:#9BA7B6; --ink-3:#78838F;
       --rule:#252E3A; --rule-soft:#1D2530;
-      --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319;
+      --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319; --on-brass:#14181F;
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
     }
   }
@@ -24,7 +24,7 @@
     --bg:#0E131A; --surface:#151C25; --surface-2:#111821;
     --ink:#E9EDF3; --ink-2:#9BA7B6; --ink-3:#78838F;
     --rule:#252E3A; --rule-soft:#1D2530;
-    --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319;
+    --brass:#DDA945; --brass-ink:#E7BA63; --brass-fill:#2A2313; --brass-edge:#3D3319; --on-brass:#14181F;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px -16px rgba(0,0,0,.7);
   }
 
@@ -84,6 +84,28 @@
   .field a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--brass-edge);}
   .field a:hover{color:var(--brass-ink); border-bottom-color:var(--brass);}
   .field a:focus-visible{outline:2px solid var(--brass); outline-offset:3px; border-radius:2px;}
+
+  .cta{margin-top:22px; display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:9px;
+    background:var(--brass); color:var(--on-brass); border:1px solid var(--brass);
+    padding:11px 20px 11px 17px; border-radius:3px;
+    font-family:var(--sans); font-weight:600; font-size:15.5px; letter-spacing:-.1px;
+    text-decoration:none; box-shadow:var(--shadow);
+    transition:transform .1s ease, filter .12s ease;
+  }
+  .btn svg{width:17px; height:17px; flex:none;}
+  .btn:hover{filter:brightness(1.12); transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
+  .btn:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
+  .alt{display:flex; align-items:center; flex-wrap:wrap; gap:6px;
+       font-family:var(--mono); font-size:11.5px; color:var(--ink-3);}
+  .alt a{
+    color:var(--ink-2); text-decoration:none; letter-spacing:.6px;
+    border:1px solid var(--rule); border-radius:2px; padding:3px 8px; background:var(--surface);
+  }
+  .alt a:hover{color:var(--brass-ink); border-color:var(--brass-edge); background:var(--brass-fill);}
+  .alt a:focus-visible{outline:2px solid var(--brass); outline-offset:2px;}
 
   .dl{display:flex; flex-wrap:wrap; gap:5px;}
   .dl a{
@@ -245,6 +267,13 @@
           <span data-t="ru">Строю сервисы, на которых работают продукты реального времени: брокеры сообщений, сокет-слой, документные хранилища и API, которые всё это связывают. Последний из них — сервис командного чата, доведённый от пустого репозитория до продакшена.</span>
           <span data-t="en">I build the services behind real-time communication products: message brokers, socket layers, document stores and the APIs that tie them together. Most recently, a team-chat service taken from an empty repository to production.</span><span data-t="fr">Je construis les services qui font tourner les produits de communication en temps réel : brokers de messages, couche socket, bases orientées documents et les API qui relient le tout. Le dernier en date : un service de chat d'équipe mené d'un dépôt vide jusqu'à la production.</span>
         </p>
+        <div class="cta">
+          <span data-t="ro"><a class="btn" href="https://stmihai84.github.io/cv-ro.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Descarcă CV (PDF)</a></span>
+          <span data-t="ru"><a class="btn" href="https://stmihai84.github.io/cv-ru.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Скачать резюме (PDF)</a></span>
+          <span data-t="en"><a class="btn" href="https://stmihai84.github.io/cv-en.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Download CV (PDF)</a></span>
+          <span data-t="fr"><a class="btn" href="https://stmihai84.github.io/cv-fr.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 11l5 5 5-5"></path><path d="M4 20h16"></path></svg>Télécharger le CV (PDF)</a></span>
+          <span class="alt"><span data-t="ro">sau</span><span data-t="ru">или</span><span data-t="en">or</span><span data-t="fr">ou</span><a href="https://stmihai84.github.io/cv-ro.pdf" target="_blank" rel="noopener">RO</a><a href="https://stmihai84.github.io/cv-ru.pdf" target="_blank" rel="noopener">RU</a><a href="https://stmihai84.github.io/cv-en.pdf" target="_blank" rel="noopener">EN</a><a href="https://stmihai84.github.io/cv-fr.pdf" target="_blank" rel="noopener">FR</a></span>
+        </div>
       </div>
       <div class="patch">
         <div class="field">
@@ -258,15 +287,6 @@
         <div class="field">
           <span class="k"><span data-t="ro">Limbi de lucru</span><span data-t="ru">Рабочие языки</span><span data-t="en">Working languages</span><span data-t="fr">Langues de travail</span></span>
           <span class="v langs"><b>RO</b><b>FR</b><b>RU</b><b>EN</b></span>
-        </div>
-        <div class="field">
-          <span class="k"><span data-t="ro">Descarcă CV (PDF)</span><span data-t="ru">Скачать резюме (PDF)</span><span data-t="en">Download CV (PDF)</span><span data-t="fr">Télécharger le CV (PDF)</span></span>
-          <span class="v dl">
-            <a href="https://stmihai84.github.io/cv-ro.pdf" target="_blank" rel="noopener">RO</a>
-            <a href="https://stmihai84.github.io/cv-ru.pdf" target="_blank" rel="noopener">RU</a>
-            <a href="https://stmihai84.github.io/cv-en.pdf" target="_blank" rel="noopener">EN</a>
-            <a href="https://stmihai84.github.io/cv-fr.pdf" target="_blank" rel="noopener">FR</a>
-          </span>
         </div>
       </div>
     </div>
