@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1632,7 +1632,7 @@
     var allowed = ['ro', 'ru', 'en', 'fr'];
 
     function set(l, store) {
-      if (allowed.indexOf(l) < 0) l = 'ro';
+      if (allowed.indexOf(l) < 0) l = 'en';
       root.setAttribute('data-l', l);
       root.lang = l;
       btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
@@ -1658,8 +1658,20 @@
 
     var saved = null;
     try { saved = localStorage.getItem('cv-lang'); } catch (e) { }
-    var nav = (navigator.language || 'ro').slice(0, 2).toLowerCase();
-    set(saved || (allowed.indexOf(nav) >= 0 ? nav : 'ro'), false);
+    // limba: ?lang=xx, apoi alegerea retinuta, apoi limbile browserului in ordine; implicit engleza
+    function detect() {
+      var m = /[?&]lang=([a-z]{2})/i.exec(location.search);
+      if (m && allowed.indexOf(m[1].toLowerCase()) >= 0) return m[1].toLowerCase();
+      if (allowed.indexOf(saved) >= 0) return saved;
+      var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        var c = String(langs[i]).slice(0, 2).toLowerCase();
+        if (c === 'mo') c = 'ro';
+        if (allowed.indexOf(c) >= 0) return c;
+      }
+      return 'en';
+    }
+    set(detect(), false);
 
     btns.forEach(function (b) {
       b.addEventListener('click', function () { set(b.dataset.l, true); });

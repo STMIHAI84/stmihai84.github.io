@@ -41,7 +41,7 @@ DESC="Node.js / TypeScript si Symfony: servicii de timp real, RabbitMQ, Socket.I
 {
   cat <<HEAD
 <!doctype html>
-<html lang="ro">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
