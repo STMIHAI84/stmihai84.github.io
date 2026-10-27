@@ -36,8 +36,8 @@ done
 # index.html = document complet (head cu Open Graph) + continutul paginii
 # Profilul LinkedIn — SINGURUL loc de schimbat daca modifici URL-ul de profil.
 LINKEDIN="https://www.linkedin.com/in/mihai-stingaci-dev"
-TITLE="Mihail Stîngaci — Backend / Full-Stack Developer"
-DESC="Symfony, Node.js si microservicii event-driven pentru platforme de comunicare in timp real. CV in romana, rusa, engleza si franceza."
+TITLE="Mihail Stîngaci — Backend Developer, Node.js & Symfony"
+DESC="Node.js / TypeScript si Symfony: servicii de timp real, RabbitMQ, Socket.IO si microservicii event-driven. CV in romana, rusa, engleza si franceza."
 {
   cat <<HEAD
 <!doctype html>
